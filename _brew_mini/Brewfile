@@ -41,7 +41,7 @@ brew "eza"
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Play, record, convert, and stream audio and video
+# Play, record, convert, and stream select audio and video codecs
 brew "ffmpeg"
 # Banner-like program prints strings as ASCII art
 brew "figlet"
@@ -69,7 +69,7 @@ brew "gum"
 brew "hashicorp/tap/terraform"
 # Kubernetes package manager
 brew "helm"
-# Tools and libraries to manipulate images in many formats
+# Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
@@ -97,6 +97,8 @@ brew "mas"
 brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Net top tool grouping bandwidth per process
+brew "nethogs"
 # Modern shell for the GitHub era
 brew "nushell"
 # Manage multiple Node.js versions

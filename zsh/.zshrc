@@ -250,7 +250,7 @@ export NVM_DIR="$HOME/.nvm"
 # Color Script
 indexes=(30 39 56 55 51 49 30 29 4 21 11 2)
 random_index=${indexes[RANDOM % ${#indexes[@]}]}
-[[ -t 0 && -t 1 ]] && colorscript exec $random_index 2>/dev/null
+[[ -t 0 && -t 1 ]] && colorscript exec $random_index 2>&1 | grep -v "Input error"
 
 # Nap
 export NAP_CONFIG="$XDG_CONFIG_HOME/nap/config.yaml"
