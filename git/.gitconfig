@@ -17,6 +17,10 @@
 [includeIf "gitdir:~/code/rgvs/"]
     path = ~/.gitconfig-shadow
 
+
+[includeIf "gitdir:~/code/gib/"]
+    path = ~/.gitconfig-shadow
+
 [core]
     pager = delta
 
