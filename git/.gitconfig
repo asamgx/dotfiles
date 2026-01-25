@@ -10,16 +10,8 @@
 	process = git-lfs filter-process
 	required = true
 
-[includeIf "gitdir:~/code/pulse/"]
-    path = ~/.gitconfig-shadow
-
-
-[includeIf "gitdir:~/code/rgvs/"]
-    path = ~/.gitconfig-shadow
-
-
-[includeIf "gitdir:~/code/gib/"]
-    path = ~/.gitconfig-shadow
+[include]
+    path = ~/.gitconfig-local
 
 [core]
     pager = delta
