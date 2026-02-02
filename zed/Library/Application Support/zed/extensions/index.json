@@ -4,7 +4,7 @@
       "manifest": {
         "id": "catppuccin",
         "name": "Catppuccin",
-        "version": "0.2.24",
+        "version": "0.2.25",
         "schema_version": 1,
         "description": "🦀 Soothing pastel theme for Zed",
         "repository": "https://github.com/catppuccin/zed",
@@ -16,8 +16,8 @@
           "version": null
         },
         "themes": [
-          "themes/catppuccin-mauve.json",
-          "themes/catppuccin-no-italics-mauve.json"
+          "themes/catppuccin-no-italics-mauve.json",
+          "themes/catppuccin-mauve.json"
         ],
         "icon_themes": [],
         "languages": [],
@@ -35,7 +35,7 @@
       "manifest": {
         "id": "catppuccin-blur",
         "name": "Catppuccin Blur",
-        "version": "0.3.3",
+        "version": "0.3.4",
         "schema_version": 1,
         "description": "Catppuccin themes with blur",
         "repository": "https://github.com/jenslys/zed-catppuccin-blur",
