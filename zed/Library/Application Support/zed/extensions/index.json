@@ -526,7 +526,7 @@
       "manifest": {
         "id": "lua",
         "name": "Lua",
-        "version": "0.1.7",
+        "version": "0.1.8",
         "schema_version": 1,
         "description": "Lua support.",
         "repository": "https://github.com/zed-extensions/lua",
@@ -731,7 +731,7 @@
       "manifest": {
         "id": "sql",
         "name": "SQL",
-        "version": "1.1.6",
+        "version": "1.1.7",
         "schema_version": 1,
         "description": "SQL language support.",
         "repository": "https://github.com/zed-extensions/sql",
