@@ -272,6 +272,8 @@ cask "spotmenu"
 cask "stats"
 # Open-source media center
 cask "stremio"
+# Companion app for Stremio Web
+cask "stremioservice"
 # Text editor for code, markup and prose
 cask "sublime-text"
 # JDK from the Eclipse Foundation (Adoptium)
