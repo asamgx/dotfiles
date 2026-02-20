@@ -93,6 +93,8 @@ brew "lolcat"
 brew "lsd"
 # Mac App Store command-line interface
 brew "mas"
+# Run multiple commands in parallel
+brew "mprocs"
 # Fast, highly customisable system info script
 brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -288,6 +290,8 @@ cask "stats"
 cask "stremio"
 # Text editor for code, markup and prose
 cask "sublime-text"
+# Real time file synchronisation software
+cask "syncthing-app"
 # JDK from the Eclipse Foundation (Adoptium)
 cask "temurin@21"
 # Open-source BitTorrent client
@@ -616,6 +620,7 @@ antigravity "wix.vscode-import-cost"
 # go (brewsync extension)
 go "github.com/air-verse/air"
 go "github.com/asamgx/brewsync/cmd/brewsync"
+go "github.com/asamgx/invoice"
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/maaslalani/nap"
 go "github.com/pressly/goose/v3/cmd/goose"
