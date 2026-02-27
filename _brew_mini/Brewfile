@@ -1,5 +1,7 @@
+tap "anomalyco/tap"
 tap "charmbracelet/tap"
 tap "derailed/k9s"
+tap "f1bonacc1/tap"
 tap "hashicorp/tap"
 tap "jesseduffield/lazygit"
 tap "nikitabobko/tap"
@@ -7,6 +9,8 @@ tap "oven-sh/bun"
 
 # Portable ASCII art graphics library
 brew "aalib"
+# The AI coding agent built for the terminal.
+brew "anomalyco/tap/opencode"
 # Microsoft Azure CLI 2.0
 brew "azure-cli"
 # Clone of cat(1) with syntax highlighting and Git integration
@@ -23,8 +27,6 @@ brew "charmbracelet/tap/freeze"
 brew "charmbracelet/tap/skate"
 # Console Matrix
 brew "cmatrix"
-# OpenAI's coding agent that runs in your terminal
-brew "codex"
 # Apjanke's fork of the classic cowsay project
 brew "cowsay"
 # Securely send things from one computer to another
@@ -37,6 +39,7 @@ brew "dbmate"
 brew "derailed/k9s/k9s"
 # Modern, maintained replacement for ls
 brew "eza"
+brew "f1bonacc1/tap/process-compose"
 # Like neofetch, but much faster because written mostly in C
 brew "fastfetch"
 # Simple, fast and user-friendly alternative to find
@@ -49,6 +52,8 @@ brew "figlet"
 brew "fortune"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# Interact with Google Gemini AI models from the command-line
+brew "gemini-cli"
 # GitHub command-line tool
 brew "gh"
 # Distributed revision control system
@@ -216,6 +221,8 @@ cask "claude"
 cask "claude-code"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Universal database tool and SQL client
@@ -244,6 +251,8 @@ cask "hiddenbar"
 cask "iterm2"
 # Keyboard customiser
 cask "karabiner-elements"
+# Open-source keystroke visualiser
+cask "keycastr"
 # Kubernetes IDE
 cask "lens"
 # Open-source cross-platform alternative to AirDrop
