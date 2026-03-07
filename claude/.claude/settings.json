@@ -1,48 +1,47 @@
 {
-    "env": {
-        "DISABLE_ZOXIDE": "1"
-    },
-    "permissions": {
-        "allow": [
-            "Bash(git checkout:*)",
-            "Bash(bq show:*)",
-            "Bash(python3:*)",
-            "Bash(gcloud builds list:*)",
-            "Bash(gcloud builds log:*)",
-            "Bash(kubectl describe:*)",
-            "Bash(kubectl logs:*)",
-            "Bash(gcloud compute networks subnets describe:*)",
-            "Bash(kubectl get:*)",
-            "Bash(gcloud compute routers get-status:*)",
-            "Bash(kubectl run:*)",
-            "WebSearch",
-            "Bash(kubectl kustomize:*)",
-            "Bash(gsutil ls:*)",
-            "Bash(gh pr diff:*)",
-            "Bash(ruff check:*)",
-            "Bash(gh pr view:*)",
-            "Bash(pyrefly check:*)"
-        ],
-        "deny": [],
-        "ask": [],
-        "defaultMode": "default"
-    },
-    "model": "opus",
-    "statusLine": {
-        "type": "command",
-        "command": "/bin/bash ~/.claude/statusline.sh"
-    },
-    "enabledPlugins": {
-        "pr-review-toolkit@claude-plugins-official": true,
-        "code-review@claude-plugins-official": true,
-        "pyright-lsp@claude-plugins-official": true,
-        "context7@claude-plugins-official": true,
-        "frontend-design@claude-plugins-official": true,
-        "typescript-lsp@claude-plugins-official": true,
-        "linear@claude-plugins-official": true,
-        "gopls-lsp@claude-plugins-official": true,
-        "rust-analyzer-lsp@claude-plugins-official": true,
-        "lua-lsp@claude-plugins-official": true,
-        "code-simplifier@claude-plugins-official": true
-    }
+  "env": {
+    "DISABLE_ZOXIDE": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(git checkout:*)",
+      "Bash(bq show:*)",
+      "Bash(python3:*)",
+      "Bash(gcloud builds list:*)",
+      "Bash(gcloud builds log:*)",
+      "Bash(kubectl describe:*)",
+      "Bash(kubectl logs:*)",
+      "Bash(gcloud compute networks subnets describe:*)",
+      "Bash(kubectl get:*)",
+      "Bash(gcloud compute routers get-status:*)",
+      "Bash(kubectl run:*)",
+      "WebSearch",
+      "Bash(kubectl kustomize:*)",
+      "Bash(gsutil ls:*)",
+      "Bash(gh pr diff:*)",
+      "Bash(ruff check:*)",
+      "Bash(gh pr view:*)",
+      "Bash(pyrefly check:*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "default"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/bin/bash ~/.claude/statusline.sh"
+  },
+  "enabledPlugins": {
+    "pr-review-toolkit@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "context7@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "linear@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true
+  }
 }
