@@ -161,7 +161,7 @@
       "manifest": {
         "id": "dockerfile",
         "name": "Dockerfile",
-        "version": "0.1.0",
+        "version": "0.2.0",
         "schema_version": 1,
         "description": "Dockerfile support.",
         "repository": "https://github.com/zed-extensions/dockerfile",
@@ -186,6 +186,18 @@
           }
         },
         "language_servers": {
+          "docker-language-server": {
+            "language": "Dockerfile",
+            "languages": [
+              "Dockerfile",
+              "Docker Compose"
+            ],
+            "language_ids": {
+              "Dockerfile": "dockerfile",
+              "Docker Compose": "docker-compose"
+            },
+            "code_action_kinds": null
+          },
           "dockerfile-language-server": {
             "language": "Dockerfile",
             "languages": [],
@@ -852,7 +864,7 @@
       "manifest": {
         "id": "toml",
         "name": "TOML",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "schema_version": 1,
         "description": "TOML support.",
         "repository": "https://github.com/zed-extensions/toml",
