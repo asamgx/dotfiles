@@ -1,5 +1,36 @@
 {
   "extensions": {
+    "blade-runner-2049": {
+      "manifest": {
+        "id": "blade-runner-2049",
+        "name": "Blade Runner 2049 Theme",
+        "version": "1.0.4",
+        "schema_version": 1,
+        "description": "📺 A cyberpunk aesthetic theme based on the command line interface of Blade Runner 2049, inspired by the film's dystopian and high-tech visual style",
+        "repository": "https://github.com/takk8is/blade-runner-2049-theme-for-zed",
+        "authors": [
+          "David C Cavalcante <davcavalcante@proton.me>",
+          "Takk™ Innovate Studio <say@takk.ag>"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/blade-runner-2049.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
     "catppuccin": {
       "manifest": {
         "id": "catppuccin",
@@ -79,6 +110,40 @@
         "themes": [],
         "icon_themes": [
           "icon_themes/catppuccin-icons.json"
+        ],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "charmed-icons": {
+      "manifest": {
+        "id": "charmed-icons",
+        "name": "Charmed Icons",
+        "version": "0.10.0",
+        "schema_version": 1,
+        "description": "A charming icon theme for Zed",
+        "repository": "https://github.com/jmesrje/zed-charmed-icons",
+        "authors": [
+          "littensy",
+          "jmesrje"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [],
+        "icon_themes": [
+          "icon_themes/light-theme.json",
+          "icon_themes/base-theme.json",
+          "icon_themes/warm-theme.json",
+          "icon_themes/soft-theme.json"
         ],
         "languages": [],
         "grammars": {},
@@ -288,7 +353,7 @@
       "manifest": {
         "id": "git-firefly",
         "name": "Git Firefly",
-        "version": "0.1.3",
+        "version": "0.1.4",
         "schema_version": 1,
         "description": "Provides Git Syntax Highlighting",
         "repository": "https://github.com/d1y/git_firefly",
@@ -303,10 +368,10 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/gitattributes",
           "languages/gitignore",
-          "languages/gitconfig",
-          "languages/gitrebase"
+          "languages/gitattributes",
+          "languages/gitrebase",
+          "languages/gitconfig"
         ],
         "grammars": {
           "git_config": {
@@ -424,7 +489,7 @@
       "manifest": {
         "id": "html",
         "name": "HTML",
-        "version": "0.3.0",
+        "version": "0.3.1",
         "schema_version": 1,
         "description": "HTML support.",
         "repository": "https://github.com/zed-industries/zed",
@@ -538,7 +603,7 @@
       "manifest": {
         "id": "lua",
         "name": "Lua",
-        "version": "0.1.8",
+        "version": "0.1.9",
         "schema_version": 1,
         "description": "Lua support.",
         "repository": "https://github.com/zed-extensions/lua",
@@ -552,8 +617,8 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/lua",
-          "languages/emmyluadoc"
+          "languages/emmyluadoc",
+          "languages/lua"
         ],
         "grammars": {
           "emmyluadoc": {
@@ -647,6 +712,36 @@
         "icon_themes": [
           "icon_themes/material-icon-theme.json"
         ],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
+    "nvim-nightfox": {
+      "manifest": {
+        "id": "nvim-nightfox",
+        "name": "Nightfox Themes - opaque / blurred",
+        "version": "0.7.0",
+        "schema_version": 1,
+        "description": "A port of the Neovim Nightfox themes. Includes all variants as opaque and blurred version.",
+        "repository": "https://github.com/cange/nightfox.zed",
+        "authors": [
+          "Christian Angermann"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/nvim-nightfox.json"
+        ],
+        "icon_themes": [],
         "languages": [],
         "grammars": {},
         "language_servers": {},
@@ -897,6 +992,36 @@
       },
       "dev": false
     },
+    "vesper-blur": {
+      "manifest": {
+        "id": "vesper-blur",
+        "name": "Vesper Blur",
+        "version": "0.1.1",
+        "schema_version": 1,
+        "description": "Vesper dark theme with blur/transparency effects. Peppermint and orange flavored.",
+        "repository": "https://github.com/taras-tereschenko/vesper-blur",
+        "authors": [
+          "Taras Tereschenko"
+        ],
+        "lib": {
+          "kind": null,
+          "version": null
+        },
+        "themes": [
+          "themes/vesper-blur.json"
+        ],
+        "icon_themes": [],
+        "languages": [],
+        "grammars": {},
+        "language_servers": {},
+        "context_servers": {},
+        "agent_servers": {},
+        "slash_commands": {},
+        "snippets": null,
+        "capabilities": []
+      },
+      "dev": false
+    },
     "xml": {
       "manifest": {
         "id": "xml",
@@ -935,6 +1060,18 @@
     }
   },
   "themes": {
+    "Blade Runner 2049 Dark User Imput": {
+      "extension": "blade-runner-2049",
+      "path": "themes/blade-runner-2049.json"
+    },
+    "Carbonfox - blurred": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Carbonfox - opaque": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
     "Catppuccin Espresso (Blur)": {
       "extension": "catppuccin-blur",
       "path": "themes/catppuccin-blur.json"
@@ -1039,6 +1176,22 @@
       "extension": "catppuccin",
       "path": "themes/catppuccin-no-italics-mauve.json"
     },
+    "Dawnfox - blurred": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Dawnfox - opaque": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Dayfox - blurred": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Dayfox - opaque": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
     "Dracula": {
       "extension": "dracula",
       "path": "themes/dracula.json"
@@ -1050,6 +1203,38 @@
     "Dracula Solid": {
       "extension": "dracula",
       "path": "themes/dracula.json"
+    },
+    "Duskfox - blurred": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Duskfox - opaque": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Nightfox - blurred": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Nightfox - opaque": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Nordfox - blurred": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Nordfox - opaque": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Terafox - blurred": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
+    },
+    "Terafox - opaque": {
+      "extension": "nvim-nightfox",
+      "path": "themes/nvim-nightfox.json"
     },
     "Tokyo Night": {
       "extension": "tokyo-night",
@@ -1066,9 +1251,17 @@
     "Tokyo Night Storm": {
       "extension": "tokyo-night",
       "path": "themes/tokyo-night.json"
+    },
+    "Vesper Blur": {
+      "extension": "vesper-blur",
+      "path": "themes/vesper-blur.json"
     }
   },
   "icon_themes": {
+    "Base Charmed Icons": {
+      "extension": "charmed-icons",
+      "path": "icon_themes/base-theme.json"
+    },
     "Catppuccin Frappé": {
       "extension": "catppuccin-icons",
       "path": "icon_themes/catppuccin-icons.json"
@@ -1101,9 +1294,21 @@
       "extension": "jetbrains-new-ui-icons",
       "path": "icon_themes/jetbrains-new-ui-icons-theme.json"
     },
+    "Light Charmed Icons": {
+      "extension": "charmed-icons",
+      "path": "icon_themes/light-theme.json"
+    },
     "Material Icon Theme": {
       "extension": "material-icon-theme",
       "path": "icon_themes/material-icon-theme.json"
+    },
+    "Soft Charmed Icons": {
+      "extension": "charmed-icons",
+      "path": "icon_themes/soft-theme.json"
+    },
+    "Warm Charmed Icons": {
+      "extension": "charmed-icons",
+      "path": "icon_themes/warm-theme.json"
     }
   },
   "languages": {

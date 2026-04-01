@@ -68,6 +68,8 @@ alias gcb='git checkout -b'
 alias gr='git remote'
 alias gre='git reset'
 alias guc='git reset --soft HEAD~1'
+alias gl='git log'
+alias gloga='git log --oneline --graph --all'
 
 # Docker
 alias dco="docker compose"

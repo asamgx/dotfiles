@@ -25,6 +25,8 @@ brew "charmbracelet/tap/crush"
 brew "charmbracelet/tap/freeze"
 # A personal key value store 🛼
 brew "charmbracelet/tap/skate"
+# Utility for connecting securely to your Cloud SQL instances
+brew "cloud-sql-proxy"
 # Console Matrix
 brew "cmatrix"
 # Apjanke's fork of the classic cowsay project

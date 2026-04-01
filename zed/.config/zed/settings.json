@@ -57,7 +57,7 @@
   "icon_theme": {
     "mode": "system",
     "light": "Catppuccin Frappé",
-    "dark": "Catppuccin Mocha"
+    "dark": "Base Charmed Icons"
   },
   "vim_mode": true,
   "vim": {
