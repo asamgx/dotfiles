@@ -1,6 +1,7 @@
 {
   "env": {
-    "DISABLE_ZOXIDE": "1"
+    "DISABLE_ZOXIDE": "1",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
     "allow": [
@@ -29,7 +30,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "/bin/bash ~/.claude/statusline.sh"
+    "command": "node $HOME/.claude/hud/omc-hud.mjs"
   },
   "enabledPlugins": {
     "pr-review-toolkit@claude-plugins-official": true,
@@ -42,7 +43,26 @@
     "gopls-lsp@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "lua-lsp@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true
+    "code-simplifier@claude-plugins-official": true,
+    "codex@openai-codex": true,
+    "ralph-loop@claude-plugins-official": true,
+    "oh-my-claudecode@omc": true
   },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "omc": {
+      "source": {
+        "source": "git",
+        "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
+      }
+    }
+  },
+  "autoUpdatesChannel": "stable",
+  "minimumVersion": "2.1.89",
   "voiceEnabled": true
 }
