@@ -1,7 +1,9 @@
 {
   "env": {
     "DISABLE_ZOXIDE": "1",
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "ECC_HOOK_PROFILE": "minimal",
+    "ECC_DISABLED_HOOKS": "pre:edit-write:suggest-compact,pre:observe:continuous-learning,post:observe:continuous-learning,stop:format-typecheck,stop:check-console-log,stop:evaluate-session,stop:desktop-notify,stop:cost-tracker"
   },
   "permissions": {
     "allow": [
@@ -34,7 +36,7 @@
   },
   "enabledPlugins": {
     "pr-review-toolkit@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
+    "code-review@claude-plugins-official": false,
     "pyright-lsp@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true,
@@ -46,8 +48,7 @@
     "code-simplifier@claude-plugins-official": true,
     "codex@openai-codex": true,
     "ralph-loop@claude-plugins-official": true,
-    "oh-my-claudecode@omc": true,
-    "everything-claude-code@everything-claude-code": true
+    "oh-my-claudecode@omc": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -60,12 +61,6 @@
       "source": {
         "source": "git",
         "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
-      }
-    },
-    "everything-claude-code": {
-      "source": {
-        "source": "github",
-        "repo": "affaan-m/everything-claude-code"
       }
     }
   },

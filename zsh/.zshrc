@@ -117,12 +117,14 @@ alias c="clear"
 # Brew
 alias brewdump='brew bundle dump --force --describe --file=~/Brewfile'
 alias ccupgrade='brew upgrade --cask claude-code'
+alias cclatest='brew upgrade --cask claude-code@latest'
 
 # Python
 alias aple='source .venv/bin/activate'
 
 # claude-code
 alias lcc="claude"
+alias lccbase='claude --settings '\''{"enabledPlugins":{"oh-my-claudecode@omc":false}}'\'''
 
 ############################################
 #   TERMINAL DOPAMINE PACK — FINAL EDITION
