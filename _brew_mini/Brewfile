@@ -199,28 +199,20 @@ brew "zsh-you-should-use"
 cask "alt-tab"
 # Android SDK component
 cask "android-platform-tools"
-# AI Coding Agent IDE
-cask "antigravity"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
 # Compare files and folders
 cask "beyond-compare"
 # Desktop password and login vault
 cask "bitwarden"
-# Mobile gaming platform
-cask "bluestacks"
 # Web browser focusing on privacy
 cask "brave-browser"
-# Screen recording software
-cask "cap"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
-# OpenAI's official browser with ChatGPT built in
-cask "chatgpt-atlas"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
-cask "claude-code"
+cask "claude-code@latest"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # OpenAI's coding agent that runs in your terminal
@@ -229,8 +221,6 @@ cask "codex"
 cask "cursor"
 # Universal database tool and SQL client
 cask "dbeaver-community"
-# Utilities designed to make common development tasks easier
-cask "devtoys"
 # Voice and text chat software
 cask "discord"
 # Utility that prevents the system from going to sleep
@@ -279,8 +269,6 @@ cask "obs"
 cask "obsidian"
 # Get up and running with large language models locally
 cask "ollama-app"
-# Verify system files structure, run miscellaneous maintenance and more
-cask "onyx"
 # Replacement for Docker Desktop
 cask "orbstack"
 # Collaboration platform for API development
@@ -311,8 +299,6 @@ cask "transmission"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
-# Rust-based terminal
-cask "warp"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Multiplayer code editor
@@ -326,13 +312,11 @@ mas "Pages", id: 409201541
 mas "Numbers", id: 409203825
 mas "Blackmagic Disk Speed Test", id: 425264550
 mas "Xcode", id: 497799835
-mas "GarageBand", id: 682658836
 mas "Amphetamine", id: 937984704
 mas "AmorphousDiskMark", id: 1168254295
 mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
 mas "Blackmagic Disk Speed Test", id: 425264550
-mas "GarageBand", id: 682658836
 mas "Hidden Bar", id: 1452453066
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
@@ -561,72 +545,6 @@ cursor "wholroyd.jinja"
 cursor "wix.vscode-import-cost"
 cursor "xirider.livecode"
 cursor "ysemeniuk.emmet-live"
-
-# antigravity (brewsync extension)
-antigravity "aaron-bond.better-comments"
-antigravity "adpyke.codesnap"
-antigravity "alefragnani.project-manager"
-antigravity "anthropic.claude-code"
-antigravity "batisteo.vscode-django"
-antigravity "bierner.color-info"
-antigravity "bradlc.vscode-tailwindcss"
-antigravity "catppuccin.catppuccin-vsc"
-antigravity "catppuccin.catppuccin-vsc-icons"
-antigravity "charliermarsh.ruff"
-antigravity "christian-kohler.path-intellisense"
-antigravity "dart-code.dart-code"
-antigravity "dart-code.flutter"
-antigravity "davidanson.vscode-markdownlint"
-antigravity "devsense.composer-php-vscode"
-antigravity "devsense.intelli-php-vscode"
-antigravity "devsense.phptools-vscode"
-antigravity "devsense.profiler-php-vscode"
-antigravity "eamodio.gitlens"
-antigravity "esbenp.prettier-vscode"
-antigravity "formulahendry.auto-rename-tag"
-antigravity "foxundermoon.shell-format"
-antigravity "github.vscode-pull-request-github"
-antigravity "golang.go"
-antigravity "grapecity.gc-excelviewer"
-antigravity "hashicorp.terraform"
-antigravity "irongeek.vscode-env"
-antigravity "jannchie.ruff-ignore-explainer"
-antigravity "kisstkondoros.vscode-gutter-preview"
-antigravity "llvm-vs-code-extensions.vscode-clangd"
-antigravity "meta.pyrefly"
-antigravity "mrmlnc.vscode-duplicate"
-antigravity "ms-azuretools.vscode-containers"
-antigravity "ms-pyright.pyright"
-antigravity "ms-python.debugpy"
-antigravity "ms-python.python"
-antigravity "ms-python.vscode-python-envs"
-antigravity "ms-toolsai.jupyter"
-antigravity "ms-toolsai.jupyter-keymap"
-antigravity "ms-toolsai.jupyter-renderers"
-antigravity "ms-toolsai.vscode-jupyter-cell-tags"
-antigravity "ms-toolsai.vscode-jupyter-slideshow"
-antigravity "njpwerner.autodocstring"
-antigravity "oderwat.indent-rainbow"
-antigravity "openai.chatgpt"
-antigravity "pixl-garden.bongocat"
-antigravity "prisma.prisma"
-antigravity "redhat.java"
-antigravity "redhat.vscode-xml"
-antigravity "shopify.ruby-lsp"
-antigravity "streetsidesoftware.code-spell-checker"
-antigravity "svelte.svelte-vscode"
-antigravity "tamasfe.even-better-toml"
-antigravity "twxs.cmake"
-antigravity "vscjava.vscode-gradle"
-antigravity "vscjava.vscode-java-debug"
-antigravity "vscjava.vscode-java-dependency"
-antigravity "vscjava.vscode-java-pack"
-antigravity "vscjava.vscode-java-test"
-antigravity "vscjava.vscode-maven"
-antigravity "vscodevim.vim"
-antigravity "wayou.vscode-todo-highlight"
-antigravity "wholroyd.jinja"
-antigravity "wix.vscode-import-cost"
 
 # go (brewsync extension)
 go "github.com/air-verse/air"
