@@ -71,7 +71,7 @@ $direnv\
 $env_var\
 $mise\
 $crystal\
-$custom\
+${custom.gh_user}\
 $sudo\
 $cmd_duration\
 $line_break\
@@ -275,6 +275,14 @@ symbol = '️☁️'
 
 [package]
 disabled = true
+
+[custom.gh_user]
+command = "cat ~/.cache/gh_active_user 2>/dev/null"
+detect_folders = [".git"]
+when = "test -f ~/.cache/gh_active_user"
+symbol = " "
+format = "[$symbol$output]($style) "
+style = "bold lavender"
 
 [cmd_duration]
 min_time = 2000                 # Only show if command took longer than 2 seconds

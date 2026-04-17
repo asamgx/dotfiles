@@ -15,5 +15,8 @@ return {
         never_show = {},
       },
     },
+    clipboard = {
+      sync = "universal", -- Enables sync across different nvim instances
+    },
   },
 }

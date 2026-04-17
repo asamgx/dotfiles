@@ -23,8 +23,6 @@ brew "charmbracelet/tap/freeze"
 brew "charmbracelet/tap/skate"
 # Console Matrix
 brew "cmatrix"
-# OpenAI's coding agent that runs in your terminal
-brew "codex"
 # Apjanke's fork of the classic cowsay project
 brew "cowsay"
 # Securely send things from one computer to another
@@ -184,8 +182,6 @@ brew "zsh-syntax-highlighting"
 # ZSH plugin that reminds you to use existing aliases for commands you just typed
 brew "zsh-you-should-use"
 
-# AI Coding Agent IDE
-cask "antigravity"
 # Chromium based browser
 cask "arc"
 # Tool to flash OS images to SD cards & USB drives
@@ -196,18 +192,16 @@ cask "beyond-compare"
 cask "bitwarden"
 # Web browser focusing on privacy
 cask "brave-browser"
-# Screen recording software
-cask "cap"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
-# OpenAI's official browser with ChatGPT built in
-cask "chatgpt-atlas"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Write, edit, and chat about your code with AI
 cask "cursor"
 # Universal database tool and SQL client
@@ -232,6 +226,8 @@ cask "grandperspective"
 cask "hiddenbar"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Open-source keystroke visualiser
+cask "keycastr"
 # Kubernetes IDE
 cask "lens"
 # Open-source cross-platform alternative to AirDrop
@@ -276,6 +272,8 @@ cask "stremio"
 cask "stremioservice"
 # Text editor for code, markup and prose
 cask "sublime-text"
+# Real time file synchronisation software
+cask "syncthing-app"
 # JDK from the Eclipse Foundation (Adoptium)
 cask "temurin@21"
 # Open-source BitTorrent client
@@ -284,8 +282,6 @@ cask "transmission"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
-# Rust-based terminal
-cask "warp"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Multiplayer code editor
@@ -432,81 +428,10 @@ cursor "wholroyd.jinja"
 cursor "wix.vscode-import-cost"
 cursor "ysemeniuk.emmet-live"
 
-# antigravity (brewsync extension)
-antigravity "aaron-bond.better-comments"
-antigravity "adpyke.codesnap"
-antigravity "adpyke.vscode-sql-formatter"
-antigravity "alefragnani.project-manager"
-antigravity "anthropic.claude-code"
-antigravity "artdiniz.strike-vscode"
-antigravity "arvkevi.listipy"
-antigravity "batisteo.vscode-django"
-antigravity "bierner.color-info"
-antigravity "bradlc.vscode-tailwindcss"
-antigravity "catppuccin.catppuccin-vsc"
-antigravity "catppuccin.catppuccin-vsc-icons"
-antigravity "charliermarsh.ruff"
-antigravity "christian-kohler.path-intellisense"
-antigravity "dart-code.dart-code"
-antigravity "dart-code.flutter"
-antigravity "davidanson.vscode-markdownlint"
-antigravity "devsense.composer-php-vscode"
-antigravity "devsense.intelli-php-vscode"
-antigravity "devsense.phptools-vscode"
-antigravity "devsense.profiler-php-vscode"
-antigravity "eamodio.gitlens"
-antigravity "esbenp.prettier-vscode"
-antigravity "formulahendry.auto-rename-tag"
-antigravity "foxundermoon.shell-format"
-antigravity "github.vscode-pull-request-github"
-antigravity "golang.go"
-antigravity "grapecity.gc-excelviewer"
-antigravity "hashicorp.terraform"
-antigravity "helixquar.randomeverything"
-antigravity "irongeek.vscode-env"
-antigravity "jannchie.ruff-ignore-explainer"
-antigravity "kisstkondoros.vscode-gutter-preview"
-antigravity "llvm-vs-code-extensions.vscode-clangd"
-antigravity "meta.pyrefly"
-antigravity "mrmlnc.vscode-duplicate"
-antigravity "ms-azuretools.vscode-containers"
-antigravity "ms-pyright.pyright"
-antigravity "ms-python.debugpy"
-antigravity "ms-python.python"
-antigravity "ms-python.vscode-python-envs"
-antigravity "ms-toolsai.jupyter"
-antigravity "ms-toolsai.jupyter-keymap"
-antigravity "ms-toolsai.jupyter-renderers"
-antigravity "ms-toolsai.vscode-jupyter-cell-tags"
-antigravity "ms-toolsai.vscode-jupyter-slideshow"
-antigravity "ms-vscode.cpptools"
-antigravity "njpwerner.autodocstring"
-antigravity "oderwat.indent-rainbow"
-antigravity "openai.chatgpt"
-antigravity "pixl-garden.bongocat"
-antigravity "prisma.prisma"
-antigravity "redhat.java"
-antigravity "redhat.vscode-xml"
-antigravity "shopify.ruby-lsp"
-antigravity "streetsidesoftware.code-spell-checker"
-antigravity "svelte.svelte-vscode"
-antigravity "tamasfe.even-better-toml"
-antigravity "twxs.cmake"
-antigravity "vscjava.vscode-gradle"
-antigravity "vscjava.vscode-java-debug"
-antigravity "vscjava.vscode-java-dependency"
-antigravity "vscjava.vscode-java-pack"
-antigravity "vscjava.vscode-java-test"
-antigravity "vscjava.vscode-maven"
-antigravity "vscodevim.vim"
-antigravity "wayou.vscode-todo-highlight"
-antigravity "wholroyd.jinja"
-antigravity "wix.vscode-import-cost"
-antigravity "ysemeniuk.emmet-live"
-
 # go (brewsync extension)
 go "github.com/air-verse/air"
 go "github.com/asamgx/brewsync/cmd/brewsync"
+go "github.com/asamgx/invoice"
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/maaslalani/nap"
 go "github.com/pressly/goose/v3/cmd/goose"

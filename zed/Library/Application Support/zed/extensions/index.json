@@ -727,7 +727,7 @@
       "manifest": {
         "id": "nvim-nightfox",
         "name": "Nightfox Themes - opaque / blurred",
-        "version": "0.7.0",
+        "version": "0.8.0",
         "schema_version": 1,
         "description": "A port of the Neovim Nightfox themes. Includes all variants as opaque and blurred version.",
         "repository": "https://github.com/cange/nightfox.zed",

@@ -103,6 +103,17 @@ alias azlogin="az login"
 alias azlogout="az logout"
 alias azacr="az acr login --name"
 
+# GitHub
+_gh_cache_user() {
+  command -v gh &>/dev/null || return
+  mkdir -p ~/.cache
+  local user=$(gh auth status 2>&1 | sed -n 's/.*account \(.*\) (.*/\1/p' | head -1)
+  [[ -n "$user" ]] || return
+  echo "$(echo "$user" | cut -c1)sx" > ~/.cache/gh_active_user
+}
+ghs() { gh auth switch "$@" && _gh_cache_user; }
+setopt NO_MONITOR; _gh_cache_user &>/dev/null & disown; setopt MONITOR
+
 # Zsh Source
 alias rezsh="source ~/.zshrc"
 alias zshconfig="nvim ~/.zshrc"
