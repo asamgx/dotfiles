@@ -193,7 +193,7 @@ truncation_symbol = "…/"
 
 [git_branch]
 # symbol = ""
-symbol = " "
+symbol = " "
 
 [git_status]
 conflicted = "󰞇${count}"
@@ -206,7 +206,7 @@ modified = "󰷉${count}"
 staged = "󰄬${count}"
 renamed = "󰑕${count}"
 deleted = "󰮘${count}"
-format = '([$conflicted](bold yellow)[$deleted](bold red)[$renamed](bold blue)[$modified](bold peach)[$staged](bold green)[$untracked](bold sky)[$stashed](bold lavender)$ahead_behind )'
+format = '([$conflicted](bold yellow)[$deleted](bold red)[$renamed](bold blue)[$modified](bold peach)[$staged](bold green)[$untracked](bold sky)[$stashed](bold lavender)[$ahead_behind](bold lavender) )'
 
 [git_metrics]
 added_style = "bold green"
@@ -269,7 +269,7 @@ disabled = true # Hidden for minimal prompt; set to false to re-enable
 
 
 [gcloud]
-format = 'on [$symbol $active(\($region\))]($style) '
+format = '[$symbol $active(\($region\))]($style) '
 # format = 'on [$symbol$account(@$domain)(\($region\))]($style) '
 symbol = '️☁️'
 
@@ -280,7 +280,7 @@ disabled = true
 command = "cat ~/.cache/gh_active_user 2>/dev/null"
 detect_folders = [".git"]
 when = "test -f ~/.cache/gh_active_user"
-symbol = " "
+symbol = " "
 format = "[$symbol$output]($style) "
 style = "bold lavender"
 
