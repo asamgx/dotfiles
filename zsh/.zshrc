@@ -119,7 +119,7 @@ alias rezsh="source ~/.zshrc"
 alias zshconfig="nvim ~/.zshrc"
 
 # Tmux
-alias retmux="source ~/.tmux.conf"
+alias retmux="tmux source-file ~/.tmux.conf"
 
 # MacO
 alias wifipass="security find-generic-password -wa"
