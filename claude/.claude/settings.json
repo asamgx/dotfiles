@@ -66,5 +66,11 @@
   },
   "autoUpdatesChannel": "stable",
   "minimumVersion": "2.1.89",
-  "voiceEnabled": true
+  "editorMode": "vim",
+  "preferredNotifChannel": "ghostty",
+  "autoCompactEnabled": true,
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true,
+  "voiceEnabled": true,
+  "skipAutoPermissionPrompt": true
 }
