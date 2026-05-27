@@ -353,7 +353,7 @@
       "manifest": {
         "id": "git-firefly",
         "name": "Git Firefly",
-        "version": "0.1.4",
+        "version": "0.1.6",
         "schema_version": 1,
         "description": "Provides Git Syntax Highlighting",
         "repository": "https://github.com/d1y/git_firefly",
@@ -369,24 +369,24 @@
         "icon_themes": [],
         "languages": [
           "languages/gitignore",
+          "languages/gitconfig",
           "languages/gitattributes",
-          "languages/gitrebase",
-          "languages/gitconfig"
+          "languages/gitrebase"
         ],
         "grammars": {
           "git_config": {
             "repository": "https://github.com/the-mikedavis/tree-sitter-git-config",
-            "rev": "9c2a1b7894e6d9eedfe99805b829b4ecd871375e",
+            "rev": "0fbc9f99d5a28865f9de8427fb0672d66f9d83a5",
             "path": null
           },
           "git_rebase": {
             "repository": "https://github.com/the-mikedavis/tree-sitter-git-rebase",
-            "rev": "d8a4207ebbc47bd78bacdf48f883db58283f9fd8",
+            "rev": "39bf3b7566c86ccffd70aaa5105c7c8b76788975",
             "path": null
           },
           "gitattributes": {
             "repository": "https://github.com/tree-sitter-grammars/tree-sitter-gitattributes",
-            "rev": "41940e199ba5763abea1d21b4f717014b45f01ea",
+            "rev": "1b7af09d45b579f9f288453b95ad555f1f431645",
             "path": null
           },
           "gitignore": {
@@ -727,7 +727,7 @@
       "manifest": {
         "id": "nvim-nightfox",
         "name": "Nightfox Themes - opaque / blurred",
-        "version": "0.8.0",
+        "version": "0.9.0",
         "schema_version": 1,
         "description": "A port of the Neovim Nightfox themes. Includes all variants as opaque and blurred version.",
         "repository": "https://github.com/cange/nightfox.zed",
@@ -877,7 +877,7 @@
       "manifest": {
         "id": "terraform",
         "name": "Terraform",
-        "version": "0.1.6",
+        "version": "0.1.8",
         "schema_version": 1,
         "description": "Terraform support.",
         "repository": "https://github.com/zed-extensions/terraform",
@@ -892,14 +892,14 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/terraform",
           "languages/terraform-vars",
+          "languages/terraform",
           "languages/hcl"
         ],
         "grammars": {
           "hcl": {
-            "repository": "https://github.com/MichaHoffmann/tree-sitter-hcl",
-            "rev": "e936d3fef8bac884661472dce71ad82284761eb1",
+            "repository": "https://github.com/tree-sitter-grammars/tree-sitter-hcl",
+            "rev": "fad991865fee927dd1de5e172fb3f08ac674d914",
             "path": null
           }
         },
@@ -929,7 +929,7 @@
       "manifest": {
         "id": "tokyo-night",
         "name": "Tokyo Night Themes",
-        "version": "0.7.0",
+        "version": "0.8.0",
         "schema_version": 1,
         "description": "Tokyo Night Themes",
         "repository": "https://github.com/ssaunderss/zed-tokyo-night",
@@ -959,7 +959,7 @@
       "manifest": {
         "id": "toml",
         "name": "TOML",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "schema_version": 1,
         "description": "TOML support.",
         "repository": "https://github.com/zed-extensions/toml",

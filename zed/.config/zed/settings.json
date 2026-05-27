@@ -7,12 +7,24 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
   "ui_font_family": "JetBrainsMono Nerd Font",
   "buffer_font_weight": 500.0,
   "buffer_line_height": "standard",
   "agent_buffer_font_size": 13.0,
   "agent_ui_font_size": 13.0,
   "git_panel": {
+    "dock": "left",
     "collapse_untracked_diff": false,
     "sort_by_path": true
   },
@@ -20,6 +32,7 @@
   "auto_install_extensions": {},
   "extend_comment_on_newline": false,
   "project_panel": {
+    "dock": "left",
     "hide_hidden": false,
     "file_icons": true,
     "entry_spacing": "standard",

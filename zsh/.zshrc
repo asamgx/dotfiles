@@ -111,7 +111,15 @@ _gh_cache_user() {
   [[ -n "$user" ]] || return
   echo "$(echo "$user" | cut -c1)sx" > ~/.cache/gh_active_user
 }
-ghs() { gh auth switch "$@" && _gh_cache_user; }
+ghs() { command gh auth switch "$@" && _gh_cache_user; }
+gh() {
+  command gh "$@"
+  local rc=$?
+  if [[ "$1" == "auth" && "$2" == (switch|login|logout) ]]; then
+    _gh_cache_user
+  fi
+  return $rc
+}
 setopt NO_MONITOR; _gh_cache_user &>/dev/null & disown; setopt MONITOR
 
 # Zsh Source
