@@ -1,9 +1,7 @@
 {
   "env": {
     "DISABLE_ZOXIDE": "1",
-    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
-    "ECC_HOOK_PROFILE": "minimal",
-    "ECC_DISABLED_HOOKS": "pre:edit-write:suggest-compact,pre:observe:continuous-learning,post:observe:continuous-learning,stop:format-typecheck,stop:check-console-log,stop:evaluate-session,stop:desktop-notify,stop:cost-tracker"
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   },
   "permissions": {
     "allow": [
@@ -71,6 +69,7 @@
   "autoCompactEnabled": true,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
-  "skipAutoPermissionPrompt": true
+  "theme": "dark-ansi"
 }

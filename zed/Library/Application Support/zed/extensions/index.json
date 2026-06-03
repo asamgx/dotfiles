@@ -277,7 +277,7 @@
         "capabilities": [],
         "debug_adapters": {
           "buildx-dockerfile": {
-            "schema_path": "./debug_adapter_schemas/buildx-dockerfile.json"
+            "schema_path": "debug_adapter_schemas/buildx-dockerfile.json"
           }
         }
       },
@@ -565,7 +565,7 @@
       "manifest": {
         "id": "log",
         "name": "LOG",
-        "version": "0.0.6",
+        "version": "0.0.7",
         "schema_version": 1,
         "description": "Syntax highlighting for log files.",
         "repository": "https://github.com/nervenes/zed-log",
@@ -727,7 +727,7 @@
       "manifest": {
         "id": "nvim-nightfox",
         "name": "Nightfox Themes - opaque / blurred",
-        "version": "0.9.0",
+        "version": "0.9.1",
         "schema_version": 1,
         "description": "A port of the Neovim Nightfox themes. Includes all variants as opaque and blurred version.",
         "repository": "https://github.com/cange/nightfox.zed",
@@ -1321,7 +1321,8 @@
           "Containerfile",
           "dockerfile"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "dockerfile"
@@ -1331,7 +1332,8 @@
       "path": "languages/emmyluadoc",
       "matcher": {
         "path_suffixes": [],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": true,
       "grammar": "emmyluadoc"
@@ -1344,7 +1346,8 @@
           "gitattributes",
           ".gitattributes"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "gitattributes"
@@ -1359,7 +1362,8 @@
           ".gitmodules",
           ".lfsconfig"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "git_config"
@@ -1382,7 +1386,8 @@
           ".rgignore",
           ".vscodeignore"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "gitignore"
@@ -1394,7 +1399,8 @@
         "path_suffixes": [
           "git-rebase-todo"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "git_rebase"
@@ -1406,7 +1412,8 @@
         "path_suffixes": [
           "go.sum"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "gosum"
@@ -1418,7 +1425,8 @@
         "path_suffixes": [
           "hcl"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "hcl"
@@ -1432,7 +1440,8 @@
           "htm",
           "shtml"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "html"
@@ -1442,7 +1451,8 @@
       "path": "languages/helm",
       "matcher": {
         "path_suffixes": [],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "helm"
@@ -1454,7 +1464,8 @@
         "path_suffixes": [
           "log"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "log"
@@ -1466,7 +1477,8 @@
         "path_suffixes": [
           "lua"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "lua"
@@ -1483,7 +1495,8 @@
           "mk",
           "mak"
         ],
-        "first_line_pattern": "^#!.*\\b(?:make -f)\\b"
+        "first_line_pattern": "^#!.*\\b(?:make -f)\\b",
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "make"
@@ -1495,7 +1508,8 @@
         "path_suffixes": [
           "prisma"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "prisma"
@@ -1507,7 +1521,8 @@
         "path_suffixes": [
           "sql"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "sql"
@@ -1522,7 +1537,8 @@
           "Pipfile",
           "uv.lock"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "toml"
@@ -1535,7 +1551,8 @@
           "tf",
           "tofu"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "hcl"
@@ -1547,7 +1564,8 @@
         "path_suffixes": [
           "tfvars"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "hcl"
@@ -1559,7 +1577,8 @@
         "path_suffixes": [
           "xml"
         ],
-        "first_line_pattern": "^<.*xml"
+        "first_line_pattern": "^<.*xml",
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "xml"
@@ -1575,7 +1594,8 @@
           "example",
           "local"
         ],
-        "first_line_pattern": null
+        "first_line_pattern": null,
+        "modeline_aliases": []
       },
       "hidden": false,
       "grammar": "env"
