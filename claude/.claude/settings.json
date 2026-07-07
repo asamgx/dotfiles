@@ -46,7 +46,8 @@
     "code-simplifier@claude-plugins-official": true,
     "codex@openai-codex": true,
     "ralph-loop@claude-plugins-official": true,
-    "oh-my-claudecode@omc": true
+    "oh-my-claudecode@omc": true,
+    "playwright@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -64,12 +65,12 @@
   },
   "autoUpdatesChannel": "stable",
   "minimumVersion": "2.1.89",
+  "theme": "dark-ansi",
   "editorMode": "vim",
   "preferredNotifChannel": "ghostty",
   "autoCompactEnabled": true,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true,
-  "theme": "dark-ansi"
+  "voiceEnabled": true
 }

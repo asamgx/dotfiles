@@ -142,7 +142,8 @@ alias cclatest='brew upgrade --cask claude-code@latest'
 alias aple='source .venv/bin/activate'
 
 # claude-code
-alias lcc="claude"
+alias lcc="CLAUDE_CODE_NO_FLICKER=1 claude"
+alias lccwf="claude"
 alias lccbase='claude --settings '\''{"enabledPlugins":{"oh-my-claudecode@omc":false}}'\'''
 
 ############################################
