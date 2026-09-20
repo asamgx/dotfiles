@@ -7,3 +7,4 @@
 **/zed/prompts/
 local_extensions/
 .omc/
+*.mochi-backup

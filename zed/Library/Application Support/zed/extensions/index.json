@@ -226,9 +226,9 @@
       "manifest": {
         "id": "dockerfile",
         "name": "Dockerfile",
-        "version": "0.2.0",
+        "version": "0.3.0",
         "schema_version": 1,
-        "description": "Dockerfile support.",
+        "description": "Dockerfile and Docker Compose support.",
         "repository": "https://github.com/zed-extensions/dockerfile",
         "authors": [
           "d1y <chenhonzho@gmail.com>",
@@ -241,12 +241,18 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
+          "languages/docker-compose",
           "languages/dockerfile"
         ],
         "grammars": {
           "dockerfile": {
             "repository": "https://github.com/camdencheek/tree-sitter-dockerfile",
             "rev": "868e44ce378deb68aac902a9db68ff82d2299dd0",
+            "path": null
+          },
+          "yaml": {
+            "repository": "https://github.com/zed-industries/tree-sitter-yaml",
+            "rev": "baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a",
             "path": null
           }
         },
@@ -259,7 +265,7 @@
             ],
             "language_ids": {
               "Dockerfile": "dockerfile",
-              "Docker Compose": "docker-compose"
+              "Docker Compose": "dockercompose"
             },
             "code_action_kinds": null
           },
@@ -287,7 +293,7 @@
       "manifest": {
         "id": "dracula",
         "name": "Dracula",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "schema_version": 1,
         "description": "Official Dracula theme for Zed",
         "repository": "https://github.com/dracula/zed",
@@ -317,7 +323,7 @@
       "manifest": {
         "id": "env",
         "name": "env",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "schema_version": 1,
         "description": "🔐 Environment support. ✰ and report issues ➩",
         "repository": "https://github.com/zarifpour/zed-env",
@@ -353,7 +359,7 @@
       "manifest": {
         "id": "git-firefly",
         "name": "Git Firefly",
-        "version": "0.1.6",
+        "version": "0.1.9",
         "schema_version": 1,
         "description": "Provides Git Syntax Highlighting",
         "repository": "https://github.com/d1y/git_firefly",
@@ -368,15 +374,15 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
+          "languages/gitrebase",
           "languages/gitignore",
-          "languages/gitconfig",
           "languages/gitattributes",
-          "languages/gitrebase"
+          "languages/gitconfig"
         ],
         "grammars": {
           "git_config": {
             "repository": "https://github.com/the-mikedavis/tree-sitter-git-config",
-            "rev": "0fbc9f99d5a28865f9de8427fb0672d66f9d83a5",
+            "rev": "3a61756a81a86291a0f48e3eeeaa0692b9981aa9",
             "path": null
           },
           "git_rebase": {
@@ -444,7 +450,7 @@
       "manifest": {
         "id": "helm",
         "name": "Helm",
-        "version": "0.0.2",
+        "version": "0.0.6",
         "schema_version": 1,
         "description": "Syntax highlighting for Helm templates",
         "repository": "https://github.com/cabrinha/helm.zed",
@@ -465,7 +471,7 @@
         "grammars": {
           "helm": {
             "repository": "https://github.com/ngalaiko/tree-sitter-go-template",
-            "rev": "9d3f6e526dd074b9edae9070b7bb778f00e87a5b",
+            "rev": "aa71f63de226c5592dfbfc1f29949522d7c95fac",
             "path": "dialects/helm"
           }
         },
@@ -565,7 +571,7 @@
       "manifest": {
         "id": "log",
         "name": "LOG",
-        "version": "0.0.7",
+        "version": "0.0.6",
         "schema_version": 1,
         "description": "Syntax highlighting for log files.",
         "repository": "https://github.com/nervenes/zed-log",
@@ -603,7 +609,7 @@
       "manifest": {
         "id": "lua",
         "name": "Lua",
-        "version": "0.1.9",
+        "version": "0.1.10",
         "schema_version": 1,
         "description": "Lua support.",
         "repository": "https://github.com/zed-extensions/lua",
@@ -617,8 +623,8 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/emmyluadoc",
-          "languages/lua"
+          "languages/lua",
+          "languages/emmyluadoc"
         ],
         "grammars": {
           "emmyluadoc": {
@@ -628,7 +634,7 @@
           },
           "lua": {
             "repository": "https://github.com/tree-sitter-grammars/tree-sitter-lua",
-            "rev": "d76023017f7485eae629cb60d406c7a1ca0f40c9",
+            "rev": "10fe0054734eec83049514ea2e718b2a56acd0c9",
             "path": null
           }
         },
@@ -726,13 +732,13 @@
     "nvim-nightfox": {
       "manifest": {
         "id": "nvim-nightfox",
-        "name": "Nightfox Themes - opaque / blurred",
-        "version": "0.9.1",
+        "name": "Nightfox",
+        "version": "0.10.5",
         "schema_version": 1,
-        "description": "A port of the Neovim Nightfox themes. Includes all variants as opaque and blurred version.",
+        "description": "🦊 A port of the Neovim Nightfox themes. Includes all variants as opaque and blurred version.",
         "repository": "https://github.com/cange/nightfox.zed",
         "authors": [
-          "Christian Angermann"
+          "cange"
         ],
         "lib": {
           "kind": null,
@@ -757,7 +763,7 @@
       "manifest": {
         "id": "prisma",
         "name": "Prisma",
-        "version": "0.1.8",
+        "version": "0.1.9",
         "schema_version": 1,
         "description": "Prisma support.",
         "repository": "https://github.com/zed-extensions/prisma",
@@ -838,7 +844,7 @@
       "manifest": {
         "id": "sql",
         "name": "SQL",
-        "version": "1.1.7",
+        "version": "1.1.8",
         "schema_version": 1,
         "description": "SQL language support.",
         "repository": "https://github.com/zed-extensions/sql",
@@ -860,7 +866,7 @@
         "grammars": {
           "sql": {
             "repository": "https://github.com/DerekStride/tree-sitter-sql",
-            "rev": "4a99c73f5384f2be10adc55208c84d95a7eb1137",
+            "rev": "851e9cb257ba7c66cc8c14214a31c44d2f1e954e",
             "path": null
           }
         },
@@ -877,7 +883,7 @@
       "manifest": {
         "id": "terraform",
         "name": "Terraform",
-        "version": "0.1.8",
+        "version": "0.1.9",
         "schema_version": 1,
         "description": "Terraform support.",
         "repository": "https://github.com/zed-extensions/terraform",
@@ -892,9 +898,9 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/terraform-vars",
+          "languages/hcl",
           "languages/terraform",
-          "languages/hcl"
+          "languages/terraform-vars"
         ],
         "grammars": {
           "hcl": {
@@ -929,7 +935,7 @@
       "manifest": {
         "id": "tokyo-night",
         "name": "Tokyo Night Themes",
-        "version": "0.8.0",
+        "version": "0.7.0",
         "schema_version": 1,
         "description": "Tokyo Night Themes",
         "repository": "https://github.com/ssaunderss/zed-tokyo-night",
@@ -959,7 +965,7 @@
       "manifest": {
         "id": "toml",
         "name": "TOML",
-        "version": "1.0.3",
+        "version": "1.0.2",
         "schema_version": 1,
         "description": "TOML support.",
         "repository": "https://github.com/zed-extensions/toml",
@@ -1026,7 +1032,7 @@
       "manifest": {
         "id": "xml",
         "name": "XML",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "schema_version": 1,
         "description": "XML syntax support.",
         "repository": "https://github.com/sweetppro/zed-xml",
@@ -1045,7 +1051,7 @@
         "grammars": {
           "xml": {
             "repository": "https://github.com/tree-sitter-grammars/tree-sitter-xml",
-            "rev": "863dbc381f44f6c136a399e684383b977bb2beaa",
+            "rev": "5000ae8f22d11fbe93939b05c1e37cf21117162d",
             "path": "xml"
           }
         },
@@ -1196,7 +1202,7 @@
       "extension": "dracula",
       "path": "themes/dracula.json"
     },
-    "Dracula Light (Alucard)": {
+    "Dracula Light (Alucard": {
       "extension": "dracula",
       "path": "themes/dracula.json"
     },
@@ -1312,6 +1318,22 @@
     }
   },
   "languages": {
+    "Docker Compose": {
+      "extension": "dockerfile",
+      "path": "languages/docker-compose",
+      "matcher": {
+        "path_suffixes": [
+          "docker-compose.yml",
+          "docker-compose.yaml",
+          "compose.yaml",
+          "compose.yml"
+        ],
+        "first_line_pattern": null,
+        "modeline_aliases": []
+      },
+      "hidden": false,
+      "grammar": "yaml"
+    },
     "Dockerfile": {
       "extension": "dockerfile",
       "path": "languages/dockerfile",
@@ -1347,7 +1369,9 @@
           ".gitattributes"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": []
+        "modeline_aliases": [
+          "gitattributes"
+        ]
       },
       "hidden": false,
       "grammar": "gitattributes"
@@ -1363,7 +1387,9 @@
           ".lfsconfig"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": []
+        "modeline_aliases": [
+          "gitconfig"
+        ]
       },
       "hidden": false,
       "grammar": "git_config"
@@ -1379,6 +1405,7 @@
           ".eslintignore",
           ".fdignore",
           ".gitignore",
+          ".gitignore_global",
           ".git-blame-ignore-revs",
           ".ignore",
           ".npmignore",
@@ -1387,7 +1414,9 @@
           ".vscodeignore"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": []
+        "modeline_aliases": [
+          "gitignore"
+        ]
       },
       "hidden": false,
       "grammar": "gitignore"
@@ -1400,7 +1429,9 @@
           "git-rebase-todo"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": []
+        "modeline_aliases": [
+          "gitrebase"
+        ]
       },
       "hidden": false,
       "grammar": "git_rebase"
@@ -1450,7 +1481,9 @@
       "extension": "helm",
       "path": "languages/helm",
       "matcher": {
-        "path_suffixes": [],
+        "path_suffixes": [
+          ".helmignore"
+        ],
         "first_line_pattern": null,
         "modeline_aliases": []
       },
@@ -1592,7 +1625,8 @@
           "env",
           "envrc",
           "example",
-          "local"
+          "local",
+          "test"
         ],
         "first_line_pattern": null,
         "modeline_aliases": []
