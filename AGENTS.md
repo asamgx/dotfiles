@@ -14,6 +14,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/) fo
 dotfiles/
 ├── _brew_air/              # Brewfile for MacBook Air
 ├── _brew_mini/             # Brewfile for Mac mini
+├── _brew_pro/              # Brewfile for MacBook Pro
 ├── _scripts/               # Automation scripts
 │   └── code/               # VS Code/Cursor/Antigravity IDE scripts
 ├── master_code/            # Master IDE settings (source of truth)
@@ -77,10 +78,13 @@ stow --adopt <package>
 ### Homebrew Package Management
 
 ```bash
-# Install from Brewfile
-brew bundle --file=_brew_air/Brewfile   # or _brew_mini/Brewfile
+# Each machine stows its own brew package once, symlinking ~/Brewfile into the repo:
+stow _brew_air   # or _brew_mini / _brew_pro on those machines
 
-# Export current packages to Brewfile
+# Install from this machine's Brewfile (alias: brewinstall)
+brew bundle --file=~/Brewfile
+
+# Export current packages (alias: brewdump) — writes into the repo via the symlink
 brew bundle dump --force --describe --file=~/Brewfile
 
 # Cleanup packages not in Brewfile
@@ -124,13 +128,15 @@ The `.zshrc` detects the machine via hostname:
 case "$(scutil --get LocalHostName)" in
   "Andrews-MacBook-Air") export MACHINE="air" ;;
   "Andrews-Mac-mini")    export MACHINE="mini" ;;
+  "Andrews-MacBook-Pro") export MACHINE="pro" ;;
   *)                     export MACHINE="unknown" ;;
 esac
 ```
 
-Separate Brewfiles exist for each machine:
-- `_brew_air/Brewfile` - MacBook Air
-- `_brew_mini/Brewfile` - Mac mini
+Separate Brewfiles exist for each machine; each machine stows only its own package, which symlinks `~/Brewfile` to the right file (`brewinstall`/`brewdump` then operate on `~/Brewfile`):
+- `_brew_air/Brewfile` - MacBook Air (`stow _brew_air`)
+- `_brew_mini/Brewfile` - Mac mini (`stow _brew_mini`)
+- `_brew_pro/Brewfile` - MacBook Pro (`stow _brew_pro`)
 
 ## Tool Configuration Details
 
@@ -242,7 +248,7 @@ The Brewfiles include tooling for:
 
 1. **Stow conflicts**: If a file already exists at the target, stow will fail. Use `stow --adopt` to move existing files into the package, or manually backup/remove them first.
 
-2. **Brewfile machine-specific**: Use the correct Brewfile for your machine (`_brew_air` vs `_brew_mini`).
+2. **Brewfile machine-specific**: Use the correct Brewfile for your machine (`_brew_air`, `_brew_mini`, or `_brew_pro`).
 
 3. **SSH prefix change**: Tmux automatically switches prefix from `Ctrl+b` to `Ctrl+a` when over SSH to avoid conflicts with nested sessions.
 

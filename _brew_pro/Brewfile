@@ -1,0 +1,383 @@
+tap "charmbracelet/tap"
+tap "derailed/k9s"
+tap "hashicorp/tap"
+tap "jesseduffield/lazygit"
+tap "nikitabobko/tap"
+tap "oven-sh/bun"
+
+# Portable ASCII art graphics library
+brew "aalib"
+# Microsoft Azure CLI 2.0
+brew "azure-cli"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Console Bonsai is a bonsai tree generator, written in C using ncurses
+brew "cbonsai"
+# A powerful terminal-based AI assistant for developers, providing intelligent coding assistance directly in your terminal.
+brew "charmbracelet/tap/crush"
+# Generate images of code and terminal output.
+brew "charmbracelet/tap/freeze"
+# A personal key value store 🛼
+brew "charmbracelet/tap/skate"
+# Utility for connecting securely to your Cloud SQL instances
+brew "cloud-sql-proxy"
+# Console Matrix
+brew "cmatrix"
+# Apjanke's fork of the classic cowsay project
+brew "cowsay"
+# Securely send things from one computer to another
+brew "croc"
+# Power of curl, ease of use of httpie
+brew "curlie"
+# Lightweight, framework-agnostic database migration tool
+brew "dbmate"
+# Kubernetes CLI To Manage Your Clusters In Style!
+brew "derailed/k9s/k9s"
+# Modern, maintained replacement for ls
+brew "eza"
+# Like neofetch, but much faster because written mostly in C
+brew "fastfetch"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Banner-like program prints strings as ASCII art
+brew "figlet"
+# Infamous electronic fortune-cookie generator
+brew "fortune"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
+# Render markdown on the CLI
+brew "glow"
+# Fast linters runner for Go
+brew "golangci-lint"
+# Command-line tool for generating regular expressions
+brew "grex"
+# ASCII-art displaying typo-corrector for commands
+brew "gti"
+# Tool for glamorous shell scripts
+brew "gum"
+# Terraform
+brew "hashicorp/tap/terraform"
+# Kubernetes package manager
+brew "helm"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Command-line note taker
+brew "jrnl"
+# Modern load testing tool, using Go and JavaScript
+brew "k6"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# Template-free customization of Kubernetes YAML manifests
+brew "kustomize"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Postgres C API library
+brew "libpq"
+# YAML Parser
+brew "libyaml"
+# Rainbows and unicorns in your console!
+brew "lolcat"
+# Clone of ls with colorful output, file type icons, and more
+brew "lsd"
+# Mac App Store command-line interface
+brew "mas"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Net top tool grouping bandwidth per process
+brew "nethogs"
+# Modern shell for the GitHub era
+brew "nushell"
+# Manage multiple Node.js versions
+brew "nvm"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
+# Password manager
+brew "pass"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Object-relational database system
+brew "postgresql@17", link: true
+# Modern API client that lives in your terminal
+brew "posting"
+# Python version management
+brew "pyenv"
+# Pyenv plugin to manage virtualenv
+brew "pyenv-virtualenv"
+# Fast type checker and IDE for Python
+brew "pyrefly"
+# Static type checker for Python
+brew "pyright"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Reattach process (e.g., tmux) to background
+brew "reattach-to-user-namespace"
+# Persistent key-value database, with built-in net interface
+brew "redis"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Extremely fast Python linter, written in Rust
+brew "ruff"
+# Display and control your Android device
+brew "scrcpy"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
+# SOund eXchange: universal sound sample translator
+brew "sox"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Tool Command Language
+brew "tcl-tk@8"
+# User interface to the TELNET protocol
+brew "telnet"
+# Programmatically correct mistyped console commands
+brew "thefuck"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Your CLI home video recorder
+brew "vhs"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Command-line client for WebSockets
+brew "websocat"
+# Internet file retriever
+brew "wget"
+# Library to create, extract, and modify Windows Imaging files
+brew "wimlib"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# General-purpose lossless data-compression library
+brew "zlib"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
+# Zsh port of Fish shell's history search
+brew "zsh-history-substring-search"
+# Fish shell like syntax highlighting for zsh
+brew "zsh-syntax-highlighting"
+# ZSH plugin that reminds you to use existing aliases for commands you just typed
+brew "zsh-you-should-use"
+
+cask "aerospace"
+# Chromium based browser
+cask "arc"
+# Tool to flash OS images to SD cards & USB drives
+cask "balenaetcher"
+# Compare files and folders
+cask "beyond-compare"
+# Desktop password and login vault
+cask "bitwarden"
+# Web browser focusing on privacy
+cask "brave-browser"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+# Terminal-based AI coding assistant
+cask "claude-code@latest"
+# Free app that makes your Internet safer
+cask "cloudflare-warp"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
+# Write, edit, and chat about your code with AI
+cask "cursor"
+# Universal database tool and SQL client
+cask "dbeaver-community"
+# Utilities designed to make common development tasks easier
+cask "devtoys"
+# Voice and text chat software
+cask "discord"
+cask "font-jetbrains-mono-nerd-font"
+cask "font-symbols-only-nerd-font"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Desktop client for GitHub repositories
+cask "github"
+# Web browser
+cask "google-chrome"
+# Graphically shows disk usage within a file system
+cask "grandperspective"
+# Utility to hide menu bar items
+cask "hiddenbar"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
+# Open-source keystroke visualiser
+cask "keycastr"
+# Kubernetes IDE
+cask "lens"
+# Open-source cross-platform alternative to AirDrop
+cask "localsend"
+# Open-source firewall to block unknown outgoing connections
+cask "lulu"
+# Connect to your Android devices
+cask "macdroid"
+# Open-source, self-hosted Slack-alternative
+cask "mattermost"
+# Reverse proxy, secure introspectable tunnels to localhost
+cask "ngrok"
+# App to write, plan, collaborate, and get organised
+cask "notion"
+# Calculator and converter application
+cask "numi"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# Get up and running with large language models locally
+cask "ollama-app"
+# Replacement for Docker Desktop
+cask "orbstack"
+# Collaboration platform for API development
+cask "postman"
+# Proxy client
+cask "proxifier"
+# Control your tools with a few keystrokes
+cask "raycast"
+# Team communication and collaboration software
+cask "slack"
+# Music streaming service
+cask "spotify"
+# Spotify and iTunes in the menu bar
+cask "spotmenu"
+# System monitor for the menu bar
+cask "stats"
+# Open-source media center
+cask "stremio"
+# Companion app for Stremio Web
+cask "stremioservice"
+# Text editor for code, markup and prose
+cask "sublime-text"
+# Real time file synchronisation software
+cask "syncthing-app"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@21"
+# Open-source BitTorrent client
+cask "transmission"
+# Open-source code editor
+cask "visual-studio-code"
+# Multimedia player
+cask "vlc"
+# Native desktop client for WhatsApp
+cask "whatsapp"
+# Multiplayer code editor
+cask "zed"
+
+mas "Bitwarden", id: 1352778147
+mas "Keynote", id: 409183694
+mas "Pages", id: 409201541
+mas "Numbers", id: 409203825
+mas "Blackmagic Disk Speed Test", id: 425264550
+mas "Xcode", id: 497799835
+mas "GarageBand", id: 682658836
+mas "Amphetamine", id: 937984704
+mas "Amphetamine", id: 937984704
+mas "Bitwarden", id: 1352778147
+mas "Blackmagic Disk Speed Test", id: 425264550
+mas "GarageBand", id: 682658836
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Xcode", id: 497799835
+
+vscode "aaron-bond.better-comments"
+vscode "adpyke.codesnap"
+vscode "adpyke.vscode-sql-formatter"
+vscode "alefragnani.project-manager"
+vscode "anthropic.claude-code"
+vscode "artdiniz.strike-vscode"
+vscode "arvkevi.listipy"
+vscode "batisteo.vscode-django"
+vscode "bierner.color-info"
+vscode "bradlc.vscode-tailwindcss"
+vscode "catppuccin.catppuccin-vsc"
+vscode "catppuccin.catppuccin-vsc-icons"
+vscode "charliermarsh.ruff"
+vscode "christian-kohler.path-intellisense"
+vscode "dart-code.dart-code"
+vscode "dart-code.flutter"
+vscode "davidanson.vscode-markdownlint"
+vscode "dotjoshjohnson.xml"
+vscode "eamodio.gitlens"
+vscode "file-icons.file-icons"
+vscode "formulahendry.auto-rename-tag"
+vscode "foxundermoon.shell-format"
+vscode "github.copilot"
+vscode "github.copilot-chat"
+vscode "github.vscode-pull-request-github"
+vscode "golang.go"
+vscode "grapecity.gc-excelviewer"
+vscode "hashicorp.terraform"
+vscode "helixquar.randomeverything"
+vscode "irongeek.vscode-env"
+vscode "jannchie.ruff-ignore-explainer"
+vscode "kisstkondoros.vscode-gutter-preview"
+vscode "mrmlnc.vscode-duplicate"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-pyright.pyright"
+vscode "ms-python.debugpy"
+vscode "ms-python.isort"
+vscode "ms-python.python"
+vscode "ms-python.vscode-pylance"
+vscode "ms-python.vscode-python-envs"
+vscode "ms-toolsai.jupyter"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-vscode.cpptools"
+vscode "njpwerner.autodocstring"
+vscode "oderwat.indent-rainbow"
+vscode "openai.chatgpt"
+vscode "pixl-garden.bongocat"
+vscode "prisma.prisma"
+vscode "redhat.vscode-xml"
+vscode "streetsidesoftware.code-spell-checker"
+vscode "svelte.svelte-vscode"
+vscode "tamasfe.even-better-toml"
+vscode "twxs.cmake"
+vscode "vscodevim.vim"
+vscode "wayou.vscode-todo-highlight"
+vscode "wholroyd.jinja"
+vscode "wix.vscode-import-cost"
+vscode "ysemeniuk.emmet-live"
+
+# go (brewsync extension)
+go "github.com/air-verse/air"
+go "github.com/asamgx/brewsync/cmd/brewsync"
+go "github.com/asamgx/invoice"
+go "github.com/go-delve/delve/cmd/dlv"
+go "github.com/maaslalani/nap"
+go "github.com/pressly/goose/v3/cmd/goose"
+go "github.com/sqlc-dev/sqlc/cmd/sqlc"
+go "github.com/swaggo/swag/cmd/swag"
+go "github.com/vektra/mockery/v2"
+go "golang.org/x/tools/gopls"
+go "honnef.co/go/tools/cmd/staticcheck"

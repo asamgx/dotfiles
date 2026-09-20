@@ -21,6 +21,8 @@ brew "charmbracelet/tap/crush"
 brew "charmbracelet/tap/freeze"
 # A personal key value store 🛼
 brew "charmbracelet/tap/skate"
+# Utility for connecting securely to your Cloud SQL instances
+brew "cloud-sql-proxy"
 # Console Matrix
 brew "cmatrix"
 # Apjanke's fork of the classic cowsay project
@@ -113,6 +115,8 @@ brew "pass"
 brew "pipx"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
+# Object-relational database system
+brew "postgresql@17", link: true
 # Modern API client that lives in your terminal
 brew "posting"
 # Python version management
@@ -182,6 +186,7 @@ brew "zsh-syntax-highlighting"
 # ZSH plugin that reminds you to use existing aliases for commands you just typed
 brew "zsh-you-should-use"
 
+cask "aerospace"
 # Chromium based browser
 cask "arc"
 # Tool to flash OS images to SD cards & USB drives
@@ -197,7 +202,7 @@ cask "chatgpt"
 # Anthropic's official Claude AI desktop app
 cask "claude"
 # Terminal-based AI coding assistant
-cask "claude-code"
+cask "claude-code@latest"
 # Free app that makes your Internet safer
 cask "cloudflare-warp"
 # OpenAI's coding agent that runs in your terminal
@@ -240,8 +245,6 @@ cask "macdroid"
 cask "mattermost"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
-# AeroSpace is an i3-like tiling window manager for macOS
-cask "nikitabobko/tap/aerospace"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Calculator and converter application
@@ -288,7 +291,6 @@ cask "whatsapp"
 cask "zed"
 
 mas "Bitwarden", id: 1352778147
-mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Pages", id: 409201541
 mas "Numbers", id: 409203825
@@ -304,7 +306,6 @@ mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Xcode", id: 497799835
-mas "iMovie", id: 408981434
 
 vscode "aaron-bond.better-comments"
 vscode "adpyke.codesnap"
@@ -367,66 +368,6 @@ vscode "wayou.vscode-todo-highlight"
 vscode "wholroyd.jinja"
 vscode "wix.vscode-import-cost"
 vscode "ysemeniuk.emmet-live"
-
-# cursor (brewsync extension)
-cursor "aaron-bond.better-comments"
-cursor "adpyke.codesnap"
-cursor "adpyke.vscode-sql-formatter"
-cursor "alefragnani.project-manager"
-cursor "anthropic.claude-code"
-cursor "anysphere.cursorpyright"
-cursor "artdiniz.strike-vscode"
-cursor "arvkevi.listipy"
-cursor "batisteo.vscode-django"
-cursor "bierner.color-info"
-cursor "bradlc.vscode-tailwindcss"
-cursor "catppuccin.catppuccin-vsc"
-cursor "catppuccin.catppuccin-vsc-icons"
-cursor "charliermarsh.ruff"
-cursor "christian-kohler.path-intellisense"
-cursor "dart-code.dart-code"
-cursor "dart-code.flutter"
-cursor "davidanson.vscode-markdownlint"
-cursor "dotjoshjohnson.xml"
-cursor "eamodio.gitlens"
-cursor "file-icons.file-icons"
-cursor "formulahendry.auto-rename-tag"
-cursor "foxundermoon.shell-format"
-cursor "github.vscode-pull-request-github"
-cursor "golang.go"
-cursor "grapecity.gc-excelviewer"
-cursor "hashicorp.terraform"
-cursor "helixquar.randomeverything"
-cursor "irongeek.vscode-env"
-cursor "jannchie.ruff-ignore-explainer"
-cursor "kisstkondoros.vscode-gutter-preview"
-cursor "mrmlnc.vscode-duplicate"
-cursor "ms-pyright.pyright"
-cursor "ms-python.debugpy"
-cursor "ms-python.isort"
-cursor "ms-python.python"
-cursor "ms-python.vscode-python-envs"
-cursor "ms-toolsai.jupyter"
-cursor "ms-toolsai.jupyter-keymap"
-cursor "ms-toolsai.jupyter-renderers"
-cursor "ms-toolsai.vscode-jupyter-cell-tags"
-cursor "ms-toolsai.vscode-jupyter-slideshow"
-cursor "ms-vscode.cpptools"
-cursor "njpwerner.autodocstring"
-cursor "oderwat.indent-rainbow"
-cursor "openai.chatgpt"
-cursor "pixl-garden.bongocat"
-cursor "prisma.prisma"
-cursor "redhat.vscode-xml"
-cursor "streetsidesoftware.code-spell-checker"
-cursor "svelte.svelte-vscode"
-cursor "tamasfe.even-better-toml"
-cursor "twxs.cmake"
-cursor "vscodevim.vim"
-cursor "wayou.vscode-todo-highlight"
-cursor "wholroyd.jinja"
-cursor "wix.vscode-import-cost"
-cursor "ysemeniuk.emmet-live"
 
 # go (brewsync extension)
 go "github.com/air-verse/air"

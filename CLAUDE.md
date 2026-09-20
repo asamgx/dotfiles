@@ -24,9 +24,10 @@ Note: `.stowrc` sets `--target=$HOME/` by default.
 ### Homebrew Package Management
 
 ```bash
-brew bundle --file=_brew_air/Brewfile   # Install from Brewfile (MacBook Air)
-brew bundle --file=_brew_mini/Brewfile  # Install from Brewfile (Mac mini)
-brew bundle dump --force --describe --file=~/Brewfile  # Export current packages
+stow _brew_air   # One per machine: symlinks ~/Brewfile to that machine's Brewfile
+                 # (_brew_mini on the Mac mini, _brew_pro on the MacBook Pro)
+brewinstall      # Alias: brew bundle --file=~/Brewfile
+brewdump         # Alias: exports current packages to ~/Brewfile (writes into repo via symlink)
 ```
 
 ### IDE Settings & Extensions
@@ -50,12 +51,12 @@ Each top-level directory is a stow package that mirrors `$HOME` structure:
 - `zsh/`, `nvim/`, `tmux/`, `git/` - Core development configs
 - `vscode/`, `cursor/`, `antigravity/`, `zed/` - IDE configs
 - `master_code/` - Shared IDE settings (source of truth for VS Code/Cursor/Antigravity)
-- `_brew_air/`, `_brew_mini/` - Machine-specific Brewfiles
+- `_brew_air/`, `_brew_mini/`, `_brew_pro/` - Machine-specific Brewfiles
 - `_scripts/` - Automation scripts
 
 ### Machine Detection
 
-The `.zshrc` detects machine via hostname and sets `$MACHINE` to `air`, `mini`, or `unknown`. Use the appropriate Brewfile for each machine.
+The `.zshrc` detects machine via hostname and sets `$MACHINE` to `air`, `mini`, `pro`, or `unknown`. Each machine stows its own `_brew_*` package so `~/Brewfile` symlinks to the right machine-specific Brewfile; `brewinstall`/`brewdump` operate on `~/Brewfile`.
 
 ### IDE Settings Sync
 
