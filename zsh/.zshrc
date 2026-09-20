@@ -21,6 +21,9 @@ case "$(scutil --get LocalHostName)" in
   "Andrews-Mac-mini")
     export MACHINE="mini"
     ;;
+  "Andrews-MacBook-Pro")
+    export MACHINE="pro"
+    ;;
   *)
     export MACHINE="unknown"
     ;;
@@ -133,8 +136,9 @@ alias retmux="tmux source-file ~/.tmux.conf"
 alias wifipass="security find-generic-password -wa"
 alias c="clear"
 
-# Brew
+# Brew (~/Brewfile is a stow symlink to this machine's _brew_*/Brewfile)
 alias brewdump='brew bundle dump --force --describe --file=~/Brewfile'
+alias brewinstall='brew bundle --file=~/Brewfile'
 alias ccupgrade='brew upgrade --cask claude-code'
 alias cclatest='brew upgrade --cask claude-code@latest'
 
