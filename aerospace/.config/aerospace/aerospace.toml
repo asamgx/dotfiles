@@ -12,7 +12,7 @@ after-login-command = []
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = true 
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -225,11 +225,11 @@ automatically-unhide-macos-hidden-apps = false
     8 = 'main'
     9 = 'main'
     10 = 'main'
-    A = ['B226WL', 'HP Z27n', 'secondary', 'main']
-    S = ['B226WL', 'HP Z27n', 'secondary', 'main']
-    D = ['B226WL', 'HP Z27n', 'secondary', 'main']
-    F = ['B226WL', 'HP Z27n', 'secondary', 'main']
-    G = ['B226WL', 'HP Z27n', 'secondary', 'main']
+    A = ['secondary','B226WL', 'HP Z27n', 'built-in', 'main']
+    S = ['secondary','B226WL', 'HP Z27n', 'built-in', 'main']
+    D = ['secondary','B226WL', 'HP Z27n', 'built-in', 'main']
+    F = ['secondary','B226WL', 'HP Z27n', 'built-in', 'main']
+    G = ['secondary','B226WL', 'HP Z27n', 'built-in', 'main']
     Q = ['main']
     W = ['main']
     E = ['main']
