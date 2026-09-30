@@ -7,7 +7,6 @@
     "allow": [
       "Bash(git checkout:*)",
       "Bash(bq show:*)",
-      "Bash(python3:*)",
       "Bash(gcloud builds list:*)",
       "Bash(gcloud builds log:*)",
       "Bash(kubectl describe:*)",
@@ -127,7 +126,6 @@
       }
     ]
   },
-  "model": "claude-fable-5[1m]",
   "statusLine": {
     "type": "command",
     "command": "node $HOME/.claude/hud/omc-hud.mjs"
@@ -173,5 +171,16 @@
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(gcloud * --project=*prod*) writes"
+    ]
+  },
+  "voiceEnabled": true,
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  }
 }

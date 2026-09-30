@@ -106,7 +106,7 @@ brew "nvm"
 # Create, run, and share large language models (LLMs)
 brew "ollama"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
+brew "openssl@3", link: true
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
 # Password manager
@@ -207,11 +207,8 @@ cask "claude-code@latest"
 cask "cloudflare-warp"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
-# Write, edit, and chat about your code with AI
 # Universal database tool and SQL client
 cask "dbeaver-community"
-# Utilities designed to make common development tasks easier
-cask "devtoys"
 # Voice and text chat software
 cask "discord"
 cask "font-jetbrains-mono-nerd-font"
@@ -240,7 +237,6 @@ cask "localsend"
 cask "lulu"
 # Connect to your Android devices
 cask "macdroid"
-# Open-source, self-hosted Slack-alternative
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
@@ -269,8 +265,6 @@ cask "spotmenu"
 cask "stats"
 # Open-source media center
 cask "stremio"
-# Companion app for Stremio Web
-cask "stremioservice"
 # Text editor for code, markup and prose
 cask "sublime-text"
 # Real time file synchronisation software
@@ -371,6 +365,7 @@ vscode "ysemeniuk.emmet-live"
 go "github.com/air-verse/air"
 go "github.com/asamgx/brewsync/cmd/brewsync"
 go "github.com/asamgx/invoice"
+go "github.com/asamgx/storix/cmd/storix"
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/maaslalani/nap"
 go "github.com/pressly/goose/v3/cmd/goose"
