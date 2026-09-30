@@ -259,7 +259,6 @@ cask "localsend"
 cask "lulu"
 # Connect to your Android devices
 cask "macdroid"
-# Open-source, self-hosted Slack-alternative
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # AeroSpace is an i3-like tiling window manager for macOS
