@@ -208,7 +208,6 @@ cask "cloudflare-warp"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
 # Write, edit, and chat about your code with AI
-cask "cursor"
 # Universal database tool and SQL client
 cask "dbeaver-community"
 # Utilities designed to make common development tasks easier
@@ -242,7 +241,6 @@ cask "lulu"
 # Connect to your Android devices
 cask "macdroid"
 # Open-source, self-hosted Slack-alternative
-cask "mattermost"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # App to write, plan, collaborate, and get organised
