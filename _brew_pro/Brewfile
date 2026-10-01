@@ -1,9 +1,9 @@
-tap "charmbracelet/tap"
-tap "derailed/k9s"
-tap "hashicorp/tap"
-tap "jesseduffield/lazygit"
-tap "nikitabobko/tap"
-tap "oven-sh/bun"
+tap "charmbracelet/tap", trusted: true
+tap "derailed/k9s", trusted: true
+tap "hashicorp/tap", trusted: true
+tap "jesseduffield/lazygit", trusted: true
+tap "nikitabobko/tap", trusted: true
+tap "oven-sh/bun", trusted: true
 
 # Portable ASCII art graphics library
 brew "aalib"
@@ -93,8 +93,6 @@ brew "lolcat"
 brew "lsd"
 # Mac App Store command-line interface
 brew "mas"
-# Fast, highly customisable system info script
-brew "neofetch"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Net top tool grouping bandwidth per process
@@ -106,7 +104,7 @@ brew "nvm"
 # Create, run, and share large language models (LLMs)
 brew "ollama"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@3"
+brew "openssl@3", link: true
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
 # Password manager
@@ -186,7 +184,6 @@ brew "zsh-syntax-highlighting"
 # ZSH plugin that reminds you to use existing aliases for commands you just typed
 brew "zsh-you-should-use"
 
-cask "aerospace"
 # Chromium based browser
 cask "arc"
 # Tool to flash OS images to SD cards & USB drives
@@ -239,6 +236,8 @@ cask "lulu"
 cask "macdroid"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
+# AeroSpace is an i3-like tiling window manager for macOS
+cask "nikitabobko/tap/aerospace"
 # App to write, plan, collaborate, and get organised
 cask "notion"
 # Calculator and converter application
@@ -265,8 +264,6 @@ cask "spotmenu"
 cask "stats"
 # Open-source media center
 cask "stremio"
-# Companion app for Stremio Web
-cask "stremioservice"
 # Text editor for code, markup and prose
 cask "sublime-text"
 # Real time file synchronisation software
@@ -284,14 +281,6 @@ cask "whatsapp"
 # Multiplayer code editor
 cask "zed"
 
-mas "Bitwarden", id: 1352778147
-mas "Keynote", id: 409183694
-mas "Pages", id: 409201541
-mas "Numbers", id: 409203825
-mas "Blackmagic Disk Speed Test", id: 425264550
-mas "Xcode", id: 497799835
-mas "GarageBand", id: 682658836
-mas "Amphetamine", id: 937984704
 mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
 mas "Blackmagic Disk Speed Test", id: 425264550
@@ -300,6 +289,7 @@ mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Xcode", id: 497799835
+mas "iMovie", id: 408981434
 
 vscode "aaron-bond.better-comments"
 vscode "adpyke.codesnap"
