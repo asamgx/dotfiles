@@ -15,32 +15,23 @@ dotfiles/
 ├── _brew_air/              # Brewfile for MacBook Air
 ├── _brew_mini/             # Brewfile for Mac mini
 ├── _brew_pro/              # Brewfile for MacBook Pro
-├── _scripts/               # Automation scripts
-│   └── code/               # VS Code/Cursor/Antigravity IDE scripts
-├── master_code/            # Master IDE settings (source of truth)
-│   ├── settings.json
-│   └── keybindings.json
 ├── stow/                   # Stow configuration (.stowrc, .stow-global-ignore)
 │
 │ # Stow packages (each directory mirrors $HOME structure):
 ├── aerospace/              # Tiling window manager
-├── antigravity/            # Antigravity IDE
+├── brewsync/               # brewsync config + ignore list (shared, current_machine: auto)
 ├── claude/                 # Claude AI settings
-├── cursor/                 # Cursor IDE
+├── colorscripts/           # Shell color scripts shown at shell start (copied from shell-color-scripts, see CREDITS.md)
 ├── ghostty/                # Terminal emulator
 ├── git/                    # Git configuration
 ├── k9s/                    # Kubernetes UI
 ├── lazygit/                # Git TUI
 ├── nap/                    # Code snippet manager
-├── neofetch/               # System info display
 ├── nvim/                   # Neovim (LazyVim)
-├── poetry/                 # Python Poetry config
-├── rectangle/              # Window management
-├── ssh/                    # SSH client config
+├── ssh/                    # SSH client config (reference only, never stowed)
 ├── starship/               # Shell prompt
 ├── tmux/                   # Terminal multiplexer
 ├── vscode/                 # VS Code
-├── warp/                   # Warp terminal
 ├── yazi/                   # File manager
 ├── zed/                    # Zed editor
 └── zsh/                    # Zsh shell config
@@ -84,31 +75,17 @@ stow _brew_air   # or _brew_mini / _brew_pro on those machines
 # Install from this machine's Brewfile (alias: brewinstall)
 brew bundle --file=~/Brewfile
 
-# Export current packages (alias: brewdump) — writes into the repo via the symlink
-brew bundle dump --force --describe --file=~/Brewfile
+# Export current packages (alias: brewdump) — brewsync writes this machine's _brew_*/Brewfile
+brewsync dump
 
 # Cleanup packages not in Brewfile
 brew bundle cleanup --file=_brew_air/Brewfile --dry-run  # preview
 brew bundle cleanup --file=_brew_air/Brewfile            # execute
 ```
 
-### IDE Settings & Extensions
+### VS Code Extensions
 
-Scripts in `_scripts/code/`:
-
-```bash
-# Initial setup (new machine)
-./_scripts/code/setup-ide-settings.sh setup   # Create internal symlinks
-./_scripts/code/setup-ide-settings.sh stow    # Apply to system
-./_scripts/code/import-extensions.sh all      # Install extensions
-
-# Daily workflow
-./_scripts/code/export-extensions.sh          # Export current extensions
-./_scripts/code/sync-extensions.sh all        # Install missing extensions
-
-# Reset extensions to match lists exactly (destructive)
-./_scripts/code/override-extensions.sh all
-```
+VS Code extensions are tracked in each machine's Brewfile as `vscode "..."` entries, managed by brewsync (`brewsync dump`).
 
 ### Shell Configuration
 
@@ -133,7 +110,7 @@ case "$(scutil --get LocalHostName)" in
 esac
 ```
 
-Separate Brewfiles exist for each machine; each machine stows only its own package, which symlinks `~/Brewfile` to the right file (`brewinstall`/`brewdump` then operate on `~/Brewfile`):
+Separate Brewfiles exist for each machine; each machine stows only its own package, which symlinks `~/Brewfile` to the right file (`brewinstall` then operates on `~/Brewfile`; `brewdump` runs `brewsync dump`):
 - `_brew_air/Brewfile` - MacBook Air (`stow _brew_air`)
 - `_brew_mini/Brewfile` - Mac mini (`stow _brew_mini`)
 - `_brew_pro/Brewfile` - MacBook Pro (`stow _brew_pro`)
@@ -182,10 +159,6 @@ if "test ! -d ~/.tmux/plugins/tpm" \
       path = ~/.gitconfig-shadow
   ```
 
-### IDE Sync (VS Code, Cursor, Antigravity)
-
-Master settings in `master_code/` are shared across all three IDEs via symlinks. Each IDE's stow package links to the master files.
-
 ## Useful Shell Aliases
 
 From `.zshrc`:
@@ -231,7 +204,7 @@ Catppuccin theme is used across multiple tools:
 - Neovim (colorscheme.lua)
 - Tmux (macchiato flavor)
 - k9s (multiple variants available)
-- Warp, Yazi, Zed
+- Yazi, Zed
 
 ## Development Languages
 
@@ -239,7 +212,7 @@ The Brewfiles include tooling for:
 
 | Language | Tools |
 |----------|-------|
-| **Python** | pyenv, pyenv-virtualenv, poetry, pipx, ruff, uv |
+| **Python** | pyenv, pyenv-virtualenv, pipx, ruff, uv |
 | **Go** | golang, golangci-lint, air, delve, gopls, staticcheck |
 | **Node.js** | nvm, bun, pnpm |
 | **TypeScript** | via Node.js tooling |
@@ -252,11 +225,7 @@ The Brewfiles include tooling for:
 
 3. **SSH prefix change**: Tmux automatically switches prefix from `Ctrl+b` to `Ctrl+a` when over SSH to avoid conflicts with nested sessions.
 
-4. **IDE settings symlinks**: Run `setup-ide-settings.sh setup` after cloning to create the internal symlinks before stowing.
-
-5. **Python virtualenvs**: Poetry is configured to create virtualenvs in-project (`POETRY_VIRTUALENVS_IN_PROJECT=true`).
-
-6. **Go paths**: `GOROOT` and `GOPATH` are set in `.zshrc`. GOROOT points to Homebrew's Go installation.
+4. **Go paths**: `GOROOT` and `GOPATH` are set in `.zshrc`. GOROOT points to Homebrew's Go installation.
 
 ## Troubleshooting
 
@@ -275,10 +244,4 @@ stow -R <package>
 ```bash
 ls -la ~ | grep "^l"           # List all symlinks
 ls -la ~/.zshrc                # Check specific file
-```
-
-### Verify IDE Setup
-
-```bash
-./_scripts/code/setup-ide-settings.sh verify
 ```

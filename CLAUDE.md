@@ -2,6 +2,24 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Pending Per-Machine Steps
+
+Before other work on a machine, read `CHANGELOG.md` and run any steps listed for this machine (`$MACHINE`) that its "Done on" line doesn't include yet.
+
+### When to add a CHANGELOG entry
+
+The other machines (`air`, `mini`, `pro`) only get what `git pull` brings. Whenever a change needs anything more than a pull to take effect on another machine, add an entry to `CHANGELOG.md` in the same change, so the agent there picks it up. Examples:
+
+- stowing, unstowing or re-stowing a package (new, removed or renamed packages, files replacing symlinks)
+- installing, uninstalling, trusting or reinstalling Homebrew packages, or anything a `brewsync dump` should pick up
+- files outside this repo (e.g. `~/.config/*` that isn't stowed, `/opt`, `/usr/local`, app data)
+- commands needing `sudo` or the user's password, app restarts, plugin cleanups (`:Lazy clean`)
+- updating or reinstalling tools built from other repos (e.g. `brewsync`)
+
+A change that works right after `git pull` (an edited config of an already-stowed package) needs no entry.
+
+Entry format (newest first): `## YYYY-MM-DD — title`, a `Done on:` line, `### What changed in the repo` (what and why), and `### Steps for each machine` as copy-pasteable commands that check before acting, are safe to re-run, and say how to verify. Mark steps that need `sudo` as user-run. List the machine where the change was made under `Done on`, noting any step still open there (`**pro**: all except step 2 (reason)`). When finishing a step on a machine, update its `Done on` line.
+
 ## Repository Overview
 
 Personal dotfiles managed with GNU Stow for macOS (Apple Silicon - Homebrew at `/opt/homebrew`). Configurations are user/machine-agnostic using `$HOME` for portability.
@@ -27,21 +45,14 @@ Note: `.stowrc` sets `--target=$HOME/` by default.
 stow _brew_air   # One per machine: symlinks ~/Brewfile to that machine's Brewfile
                  # (_brew_mini on the Mac mini, _brew_pro on the MacBook Pro)
 brewinstall      # Alias: brew bundle --file=~/Brewfile
-brewdump         # Alias: exports current packages to ~/Brewfile (writes into repo via symlink)
+brewdump         # Alias: brewsync dump (writes this machine's _brew_*/Brewfile; check `brewsync doctor` first)
 ```
 
-### IDE Settings & Extensions
+### VS Code Extensions
 
-```bash
-# Initial setup
-./_scripts/code/setup-ide-settings.sh setup   # Create internal symlinks
-./_scripts/code/setup-ide-settings.sh stow    # Apply to system
-./_scripts/code/import-extensions.sh all      # Install extensions
+VS Code extensions are tracked in each machine's Brewfile as `vscode "..."` entries, managed by brewsync (`brewsync dump`).
 
-# Daily workflow
-./_scripts/code/export-extensions.sh          # Export current extensions
-./_scripts/code/sync-extensions.sh all        # Install missing extensions
-```
+The `brewsync` package shares `~/.config/brewsync/config.yaml` and `ignore.yaml` across machines; `current_machine: auto` picks the machine by `scutil --get LocalHostName`. Check `brewsync doctor` shows the right machine before `brewsync dump`.
 
 ## Architecture
 
@@ -49,18 +60,13 @@ brewdump         # Alias: exports current packages to ~/Brewfile (writes into re
 
 Each top-level directory is a stow package that mirrors `$HOME` structure:
 - `zsh/`, `nvim/`, `tmux/`, `git/` - Core development configs
-- `vscode/`, `cursor/`, `antigravity/`, `zed/` - IDE configs
-- `master_code/` - Shared IDE settings (source of truth for VS Code/Cursor/Antigravity)
+- `vscode/`, `zed/` - Editor configs
 - `_brew_air/`, `_brew_mini/`, `_brew_pro/` - Machine-specific Brewfiles
-- `_scripts/` - Automation scripts
+- `ssh/` - Reference copy of `~/.ssh/config` only; never stow it
 
 ### Machine Detection
 
-The `.zshrc` detects machine via hostname and sets `$MACHINE` to `air`, `mini`, `pro`, or `unknown`. Each machine stows its own `_brew_*` package so `~/Brewfile` symlinks to the right machine-specific Brewfile; `brewinstall`/`brewdump` operate on `~/Brewfile`.
-
-### IDE Settings Sync
-
-Master settings in `master_code/` are shared across VS Code, Cursor, and Antigravity via symlinks. Run `setup-ide-settings.sh setup` after cloning to create internal symlinks.
+The `.zshrc` detects machine via hostname and sets `$MACHINE` to `air`, `mini`, `pro`, or `unknown`. Each machine stows its own `_brew_*` package so `~/Brewfile` symlinks to the right machine-specific Brewfile; `brewinstall` operates on `~/Brewfile`; `brewdump` (brewsync) writes the Brewfile configured for the detected machine.
 
 ### Key Tool Configurations
 
@@ -82,4 +88,4 @@ Per `.stow-global-ignore`: `README.*`, `LICENSE.*`, `.git*`, `.DS_Store`, `TODO.
 
 ### Catppuccin Theme
 
-Used across Neovim, Tmux, k9s, Warp, Yazi, and Zed.
+Used across Neovim, Tmux, k9s, Yazi, and Zed.

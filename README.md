@@ -47,29 +47,23 @@ brew install stow
 - **starship** - Cross-shell prompt configuration
 - **tmux** - Terminal multiplexer configuration
 - **ghostty** - Terminal emulator settings
-- **warp** - Modern terminal configuration
 
 ### Development Tools
 - **nvim** - Neovim configuration with LazyVim
 - **git** - Git configuration and aliases
 - **lazygit** - Terminal UI for git commands
-- **ssh** - SSH client configuration
+- **ssh** - SSH client configuration (reference copy only, not stowed)
 
 ### Editors & IDEs
 - **vscode** - VS Code settings and keybindings
-- **cursor** - Cursor IDE configuration
-- **antigravity** - Antigravity editor settings
 - **zed** - Zed editor configuration
 
 ### Utilities
 - **yazi** - Terminal file manager
 - **nap** - Code snippet manager
-- **neofetch** - System information tool
-- **rectangle** - Window management
+- **colorscripts** - Color scripts shown when a shell starts (from Derek Taylor's shell-color-scripts; credits in `colorscripts/.local/share/colorscripts/CREDITS.md`)
+- **brewsync** - Shared brewsync config and ignore list (machine detected by hostname)
 - **aerospace** - Tiling window manager
-
-### Language-Specific
-- **poetry** - Python dependency management configuration
 
 ## Stow Commands
 
@@ -319,8 +313,7 @@ ls -la ~/.zshrc
 ### Export Current Packages
 
 ```bash
-cd ~/dotfiles
-brew bundle dump --force --describe --file=_brew/Brewfile
+brewsync dump   # alias: brewdump — writes this machine's _brew_*/Brewfile
 ```
 
 ### Install Packages from Brewfile
