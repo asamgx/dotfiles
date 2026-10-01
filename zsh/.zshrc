@@ -1,27 +1,37 @@
 eval "$(starship init zsh)"
 
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=50000
+SAVEHIST=50000
 HISTFILE=~/.zsh_history
-fpath+=~/.zfunc
+setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE HIST_REDUCE_BLANKS
 
-autoload -Uz compinit && compinit
+# Rebuild the completion cache once a day; otherwise trust it (-C skips the slow security check).
+# After installing a tool with new completions, run: rm ~/.zcompdump && rezsh
+autoload -Uz compinit
+if [[ -f ~/.zcompdump && $(date +'%j') == $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]]; then
+  compinit -C
+else
+  compinit
+fi
 
 export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8  
+export LC_ALL=en_US.UTF-8
 export EDITOR=/opt/homebrew/bin/nvim
 export TERM=xterm-256color
 export XDG_CONFIG_HOME="$HOME/.config"
 export DOTFILES="$HOME/dotfiles"
+# Set by `brew shellenv` in .zprofile; fallback for shells that skipped it
+: ${HOMEBREW_PREFIX:=/opt/homebrew}
 
-case "$(scutil --get LocalHostName)" in
-  "Andrews-MacBook-Air")
+# Hostnames compared lowercased, so a case change in LocalHostName doesn't break detection
+case "${(L)$(scutil --get LocalHostName)}" in
+  "andrews-macbook-air")
     export MACHINE="air"
     ;;
-  "Andrews-Mac-mini")
+  "andrews-mac-mini")
     export MACHINE="mini"
     ;;
-  "Andrews-MacBook-Pro")
+  "andrews-macbook-pro")
     export MACHINE="pro"
     ;;
   *)
@@ -30,11 +40,10 @@ case "$(scutil --get LocalHostName)" in
 esac
 
 ## Aliases
-#alias l='lsd -hA --group-dirs first'
 
 # Random
 alias please='sudo $(fc -ln -1)'
-alias ccat='pygmentize -g'
+alias ccat='bat'
 alias weather='curl wttr.in'
 alias path='echo -e ${PATH//:/\\n}'
 alias psg='ps aux | grep -i'
@@ -137,7 +146,7 @@ alias wifipass="security find-generic-password -wa"
 alias c="clear"
 
 # Brew (~/Brewfile is a stow symlink to this machine's _brew_*/Brewfile)
-alias brewdump='brew bundle dump --force --describe --file=~/Brewfile'
+alias brewdump='brewsync dump'   # writes this machine's _brew_*/Brewfile
 alias brewinstall='brew bundle --file=~/Brewfile'
 alias ccupgrade='brew upgrade --cask claude-code'
 alias cclatest='brew upgrade --cask claude-code@latest'
@@ -196,7 +205,6 @@ alias hackquote='quote | cowsay | lolcat'
 
 # MATRIX / HACKER / CHILL
 alias hacker='clear && cmatrix -b -C green'
-# alias fire='aafire -driver curses'
 
 # BORED? Pull random dopamine
 bored() {
@@ -224,14 +232,7 @@ alias meditate='while true; do clear && fortune | lolcat; sleep 5; done'
 ############################################
 
 
-## Python
-# Created by `pipx` on 2025-01-23 14:13:12
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$(brew --prefix python)/libexec/bin:$PATH"
-
-#Poetry
-export POETRY_VIRTUALENVS_IN_PROJECT=true
-
+## Python (pipx and Homebrew python PATH entries live in .zprofile)
 # PyEnv
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
@@ -239,16 +240,14 @@ eval "$(pyenv init - zsh)"
 
 ## Go
 export GOPATH=$HOME/go
-# Manual Installation
-#export GOROOT=/usr/local/go
-export GOROOT="$(brew --prefix golang)/libexec"
+export GOROOT="$HOMEBREW_PREFIX/opt/go/libexec"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 # Zsh Plugins
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-you-should-use/you-should-use.plugin.zsh
-source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOMEBREW_PREFIX/share/zsh-you-should-use/you-should-use.plugin.zsh
+source $HOMEBREW_PREFIX/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # Zoxide
 [[ $- == *i* ]] && eval "$(zoxide init --cmd cd zsh)"
@@ -262,23 +261,28 @@ export FZF_DEFAULT_COMMAND="fd --hidden --strip-cwd-prefix --exclude .git"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type=d --hidden --strip-cwd-prefix --exclude .git"
 
-# Machine Specific Configurations
-# if [ "$MACHINE" = "mini" ]; then
-#   export NVM_DIR="$HOME/.nvm"
-# elif [ "$MACHINE" = "air" ]; then
-#   export NVM_DIR="$HOME/.nvm"
-# fi
-
-
-# NVM
+# NVM: put the default Node on PATH now (cheap) so node/npm work everywhere, including
+# tools nvim spawns; load nvm itself (~250 ms) only the first time `nvm` is run.
 export NVM_DIR="$HOME/.nvm"
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+() {
+  local default versions
+  [[ -r $NVM_DIR/alias/default ]] && default=$(<$NVM_DIR/alias/default)
+  versions=($NVM_DIR/versions/node/v${default}*(Nn))          # e.g. default "22" -> newest v22.x
+  (( $#versions )) || versions=($NVM_DIR/versions/node/v*(Nn))  # "lts/*", "node", etc. -> newest installed
+  (( $#versions )) && export NVM_BIN="$versions[-1]/bin" PATH="$versions[-1]/bin:$PATH"
+}
+nvm() {
+  unset -f nvm
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && . "$HOMEBREW_PREFIX/opt/nvm/nvm.sh"
+  [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && . "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm"
+  nvm "$@"
+}
 
-# Color Script
-indexes=(30 39 56 55 51 49 30 29 4 21 11 2)
-random_index=${indexes[RANDOM % ${#indexes[@]}]}
-[[ -t 0 && -t 1 ]] && colorscript exec $random_index 2>&1 | grep -v "Input error"
+# Color Script: a random one from the colorscripts package (executable files only, so LICENSE/CREDITS are skipped)
+() {
+  local scripts=(~/.local/share/colorscripts/*(N.x))
+  (( $#scripts )) && [[ -t 0 && -t 1 ]] && bash "$scripts[RANDOM % $#scripts + 1]"
+}
 
 # Nap
 export NAP_CONFIG="$XDG_CONFIG_HOME/nap/config.yaml"
@@ -286,7 +290,7 @@ export NAP_CONFIG="$XDG_CONFIG_HOME/nap/config.yaml"
 # ---- TheFuck -----
 # thefuck alias
 eval $(thefuck --alias)
-eval $(thefuck --alias fk)
+alias fk='fuck'
 
 
 # Tmuxifier
@@ -301,11 +305,13 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$HOMEBREW_PREFIX/share/google-cloud-sdk/path.zsh.inc"
 
-# Android
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
+# Android (only on machines with the SDK installed)
+if [[ -d "$HOME/Library/Android/sdk" ]]; then
+  export ANDROID_HOME="$HOME/Library/Android/sdk"
+  export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
+fi
 
 # Bun
 export BUN_INSTALL="$HOME/.bun"
