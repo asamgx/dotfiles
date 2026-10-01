@@ -1,0 +1,35 @@
+machines:
+    air:
+        hostname: Andrews-MacBook-Air
+        brewfile: /Users/andrewsam/dotfiles/_brew_air/Brewfile
+        description: Macbook Air
+    mini:
+        hostname: Andrews-Mac-mini
+        brewfile: /Users/andrew/dotfiles/_brew_mini/Brewfile
+        description: Mac Mini
+    pro:
+        hostname: Andrews-MacBook-Pro
+        brewfile: /Users/andrewsam/dotfiles/_brew_pro/Brewfile
+        description: Macbook Pro
+current_machine: auto
+default_source: air
+default_categories:
+    - tap
+    - brew
+    - cask
+    - vscode
+    - go
+    - mas
+auto_dump:
+    enabled: true
+    after_install: true
+    commit: false
+    push: false
+    commit_message: 'brewsync: update {machine} Brewfile'
+dump:
+    use_brew_bundle: true
+conflict_resolution: ask
+output:
+    color: true
+    verbose: false
+    show_descriptions: true
