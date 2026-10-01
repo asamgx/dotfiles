@@ -48,8 +48,9 @@ stow <package>              # e.g., stow zsh, stow nvim
 # Stow multiple packages
 stow zsh nvim tmux git
 
-# Stow all packages
-stow */
+# Stow all packages for this machine (zsh function in .zshrc; skips ssh, which is
+# reference only, and the other machines' _brew_* packages). Never use `stow */`.
+dotstow
 
 # Unstow (remove symlinks)
 stow -D <package>

@@ -5,6 +5,37 @@ Each entry lists what changed and what to run on every machine that hasn't done 
 "Done on" tracks progress per machine; a machine with steps still open is listed as
 `**machine**: all except step N (reason)`.
 
+## 2026-10-01 — Global gitignore, dotstow, ~/.zshrc.local, new-machine checklist
+
+Done on: **pro**.
+
+### What changed in the repo
+
+- `git` package now includes `.config/git/ignore` (the global gitignore git reads by default).
+- `.zshrc` defines `dotstow`: stows every package except `ssh` (reference only) and the other
+  machines' `_brew_*`. Use it instead of `stow */`, which would link `ssh` and fight over `~/Brewfile`.
+  Flags pass through: `dotstow -nv` (dry run), `dotstow -R` (restow).
+- `.zshrc` sources `~/.zshrc.local` last if it exists (untracked; machine-only settings and secrets),
+  like `.gitconfig` already includes `~/.gitconfig-local`. Both names are in `.gitignore`.
+- README has a step-by-step "New Machine Setup".
+
+### Steps for each machine
+
+1. **Global gitignore**: if `~/.config/git/ignore` is a real file (not a symlink), merge any lines the
+   repo copy lacks into `git/.config/git/ignore`, then replace it with the link:
+
+   ```sh
+   ls -l ~/.config/git/ignore
+   diff ~/.config/git/ignore git/.config/git/ignore
+   mv ~/.config/git/ignore ~/.config/git/ignore.bak && stow git
+   git check-ignore -v --no-index x/.claude/settings.local.json   # should name ~/.config/git/ignore
+   ```
+
+2. **dotstow**: open a new shell, then `dotstow -nv`. It should only report `starship3.toml` (unused)
+   or nothing; anything else is a package that isn't fully stowed on this machine. Run `dotstow` to
+   link it, after moving aside any file it reports as a conflict.
+3. Mark the machine as done under "Done on" above.
+
 ## 2026-10-01 — Shell color scripts copied into the dotfiles
 
 Done on: **pro**.
