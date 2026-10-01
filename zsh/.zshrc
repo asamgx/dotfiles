@@ -138,6 +138,19 @@ setopt NO_MONITOR; _gh_cache_user &>/dev/null & disown; setopt MONITOR
 alias rezsh="source ~/.zshrc"
 alias zshconfig="nvim ~/.zshrc"
 
+# Stow every dotfiles package for this machine: all except ssh (reference only) and the other
+# machines' Brewfiles. Passes flags through: `dotstow -nv` (dry run), `dotstow -R` (restow).
+dotstow() {
+  if [[ $MACHINE == unknown || ! -d $DOTFILES/_brew_$MACHINE ]]; then
+    echo "dotstow: unknown machine ($(scutil --get LocalHostName)); add it to the MACHINE case in .zshrc" >&2
+    return 1
+  fi
+  local pkgs=($DOTFILES/*(/N:t))
+  pkgs=(${pkgs:#ssh})
+  pkgs=(${pkgs:#_brew_*} _brew_$MACHINE)
+  (cd $DOTFILES && stow "$@" $pkgs)
+}
+
 # Tmux
 alias retmux="tmux source-file ~/.tmux.conf"
 
@@ -320,3 +333,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # Brewsync
 source <(brewsync completion zsh)
+
+# Machine-only settings and secrets (untracked; keep this last so it can override anything above)
+[[ -r ~/.zshrc.local ]] && source ~/.zshrc.local

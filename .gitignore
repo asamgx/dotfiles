@@ -8,3 +8,7 @@
 local_extensions/
 .omc/
 *.mochi-backup
+
+# Machine-only shell/git settings live in $HOME, never in the repo
+.zshrc.local
+.gitconfig-local
