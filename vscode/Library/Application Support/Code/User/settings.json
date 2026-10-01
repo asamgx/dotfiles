@@ -1,1 +1,109 @@
-../../../../../master_code/settings.json
+{
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontFamily": "'Hack Nerd Font',Consolas, 'Courier New', monospace",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "editor.linkedEditing": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "editor.formatOnPaste": true,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.inlineSuggest.enabled": true,
+  "explorer.confirmDragAndDrop": false,
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnType": true
+  },
+  "xml.server.binary.trustedHashes": [
+    "811cb2d83c933269475c266729b7f49b499a0337266894eac9c80d1da2062a6b"
+  ],
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.inheritEnv": false,
+  "files.associations": {
+    "*.toml": "toml"
+  },
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.env.windows": {},
+  "git.enableSmartCommit": true,
+  "notebook.output.wordWrap": true,
+  "notebook.output.scrolling": true,
+  "files.watcherExclude": {
+    "**/.next/**": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.fontFamily": "'Hack Nerd Font',Consolas, 'Courier New', monospace",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false
+  },
+  "editor.guides.bracketPairs": true,
+  "terminal.integrated.env.linux": {},
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
+  "notebook.lineNumbers": "on",
+  "editor.fontSize": 13,
+  "chat.editor.fontSize": 12,
+  "terminal.integrated.fontSize": 13,
+  "prisma.showPrismaDataPlatformNotification": false,
+  "terminal.integrated.env.osx": {},
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "vim.smartRelativeLine": true,
+  "vim.useSystemClipboard": true,
+  "workbench.navigationControl.enabled": false,
+  "editor.formatOnSave": true,
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    "/var/folders/jk/1rtjtmrx77gdsmqdwd1m15t00000gn/T/postman-collections-post-response.instructions.md": true,
+    "/var/folders/jk/1rtjtmrx77gdsmqdwd1m15t00000gn/T/postman-collections-pre-request.instructions.md": true,
+    "/var/folders/jk/1rtjtmrx77gdsmqdwd1m15t00000gn/T/postman-folder-post-response.instructions.md": true,
+    "/var/folders/jk/1rtjtmrx77gdsmqdwd1m15t00000gn/T/postman-folder-pre-request.instructions.md": true,
+    "/var/folders/jk/1rtjtmrx77gdsmqdwd1m15t00000gn/T/postman-http-request-post-response.instructions.md": true,
+    "/var/folders/jk/1rtjtmrx77gdsmqdwd1m15t00000gn/T/postman-http-request-pre-request.instructions.md": true
+  },
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.productIconTheme": "bongocat",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.13",
+  "python-envs.pythonProjects": [],
+  "settingsSync.ignoredExtensions": [],
+  "editor.defaultFormatter": "charliermarsh.ruff",
+  "python.venvFolders": [
+    ".venv"
+  ],
+  "python.languageServer": "Default",
+  "window.newWindowProfile": "Default"
+}
