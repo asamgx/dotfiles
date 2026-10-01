@@ -2,43 +2,83 @@
 
 Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/) for macOS. These configurations are user and machine-agnostic, using `$HOME` environment variable for portability.
 
-## Prerequisites
+## New Machine Setup
 
-- macOS
-- [Homebrew](https://brew.sh/)
-- [GNU Stow](https://www.gnu.org/software/stow/)
+Machines are `air`, `mini` and `pro`, detected from `scutil --get LocalHostName` (see the `MACHINE`
+case near the top of `zsh/.zshrc`). For a new machine, add its hostname there and in
+`brewsync/.config/brewsync/config.yaml`, and create its `_brew_<name>/Brewfile` (e.g. copy one and
+trim it) before step 6.
 
-```bash
-# Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+1. **Command line tools and Homebrew**
 
-# Install Stow
-brew install stow
-```
-
-## Quick Start
-
-1. **Clone this repository:**
    ```bash
-   git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
+   xcode-select --install
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+   brew install stow git
+   ```
+
+2. **Set the hostname** if it doesn't match the one in `zsh/.zshrc` (case doesn't matter):
+
+   ```bash
+   scutil --get LocalHostName
+   sudo scutil --set LocalHostName Andrews-MacBook-Air   # only if it needs changing
+   ```
+
+3. **Clone this repo** (HTTPS works before SSH keys are set up; switch the remote to
+   `git@github.com:asamgx/dotfiles.git` later):
+
+   ```bash
+   git clone https://github.com/asamgx/dotfiles.git ~/dotfiles
    cd ~/dotfiles
    ```
 
-2. **Install applications via Homebrew:**
+4. **Install packages** from this machine's Brewfile (taps are trusted via `trusted: true` in it):
+
    ```bash
-   brew bundle --file=_brew/Brewfile
+   stow stow _brew_air          # _brew_mini / _brew_pro on those machines; links ~/Brewfile
+   brew bundle --file=~/Brewfile
    ```
 
-3. **Stow the configurations you want:**
-   ```bash
-   # Stow individual packages
-   stow zsh
-   stow nvim
-   stow tmux
+5. **Link the shell config and open a new shell.** Move aside anything stow reports as a conflict
+   (e.g. a `~/.zprofile` the Homebrew installer created) first:
 
-   # Or stow everything at once
-   stow */
+   ```bash
+   stow -nv zsh                 # dry run; lists conflicts
+   stow zsh && exec zsh -l
    ```
+
+6. **Link everything else.** `dotstow` (defined in `.zshrc`) stows every package except `ssh`
+   (reference copy only) and the other machines' Brewfiles:
+
+   ```bash
+   dotstow -nv                  # dry run
+   dotstow
+   ```
+
+7. **brewsync** isn't in a Brewfile; it's built from source (Go comes from the Brewfile):
+
+   ```bash
+   git clone https://github.com/asamgx/brewsync.git ~/code/brewsync
+   cd ~/code/brewsync && make install
+   brewsync doctor              # "Current machine" must show this machine before any brewsync dump
+   ```
+
+8. **Editors and tmux**
+
+   ```bash
+   nvim --headless "+Lazy! sync" +qa    # install Neovim plugins
+   tmux                                 # TPM and its plugins install themselves on first start
+   ```
+
+9. **Machine-only settings** go in untracked files that the tracked configs load if present:
+   `~/.zshrc.local` (sourced last by `.zshrc`; secrets, machine-specific env) and
+   `~/.gitconfig-local` (included by `.gitconfig`). `ssh/.ssh/config` is a reference copy; copy what
+   you need into `~/.ssh/config` by hand.
+
+`CHANGELOG.md` lists migration steps for machines that were already set up. A machine set up from
+this checklist already matches the latest state, so add it to each entry's "Done on" line instead of
+running those steps.
 
 ## What's Included
 
@@ -81,8 +121,8 @@ stow git        # Link git configs to $HOME
 # Stow multiple packages at once
 stow zsh nvim tmux git
 
-# Stow all packages (use with caution)
-stow */
+# Stow all packages for this machine (skips ssh and other machines' Brewfiles)
+dotstow
 ```
 
 ### Removing/Unstowing
@@ -320,17 +360,17 @@ brewsync dump   # alias: brewdump — writes this machine's _brew_*/Brewfile
 
 ```bash
 cd ~/dotfiles
-brew bundle --file=_brew/Brewfile
+brew bundle --file=~/Brewfile   # alias: brewinstall
 ```
 
 ### Cleanup Unused Packages
 
 ```bash
 # Remove packages not listed in Brewfile
-brew bundle cleanup --file=_brew/Brewfile
+brew bundle cleanup --file=~/Brewfile
 
 # Do a dry run first
-brew bundle cleanup --file=_brew/Brewfile --dry-run
+brew bundle cleanup --file=~/Brewfile --dry-run
 ```
 
 ## Contributing

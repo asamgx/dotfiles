@@ -34,7 +34,7 @@ stow -D <package>           # Remove symlinks
 stow -R <package>           # Refresh symlinks after updates
 stow -nv <package>          # Dry run with verbose output
 stow --adopt <package>      # Adopt existing files into stow package
-stow */                     # Stow all packages
+dotstow                     # Stow all packages for this machine (zsh function; skips ssh and other machines' _brew_*)
 ```
 
 Note: `.stowrc` sets `--target=$HOME/` by default.
