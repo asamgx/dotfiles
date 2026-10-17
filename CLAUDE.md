@@ -81,7 +81,7 @@ This repo is public. Commit only settings, never work details, generated files o
 
 ### Files Ignored by Stow
 
-Per `.stow-global-ignore`: `README.*`, `LICENSE.*`, `.git*`, `.DS_Store`, `TODO.*`, `*.secrets.*`
+Per `.stow-global-ignore`: `README.*`, `LICENSE.*`, `.git*`, `.DS_Store`, `TODO.*`, `*.secrets.*`, `.omc` (oh-my-claudecode session state)
 
 ## Conventions
 
