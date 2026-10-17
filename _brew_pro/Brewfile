@@ -55,6 +55,8 @@ brew "gh"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Quickly rewrite git repository history
+brew "git-filter-repo"
 # Render markdown on the CLI
 brew "glow"
 # Fast linters runner for Go
@@ -115,6 +117,8 @@ brew "pipx"
 brew "poppler"
 # Object-relational database system
 brew "postgresql@17", link: true
+# Object-relational database system
+brew "postgresql@18"
 # Modern API client that lives in your terminal
 brew "posting"
 # Python version management
@@ -192,6 +196,8 @@ cask "balenaetcher"
 cask "beyond-compare"
 # Desktop password and login vault
 cask "bitwarden"
+# 3D creation suite
+cask "blender"
 # Web browser focusing on privacy
 cask "brave-browser"
 # OpenAI's official ChatGPT desktop app
@@ -214,6 +220,8 @@ cask "font-symbols-only-nerd-font"
 cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
+# Free and open-source image editor
+cask "gimp"
 # Desktop client for GitHub repositories
 cask "github"
 # Web browser
@@ -357,6 +365,7 @@ vscode "ysemeniuk.emmet-live"
 go "github.com/air-verse/air"
 go "github.com/asamgx/brewsync/cmd/brewsync"
 go "github.com/asamgx/invoice"
+go "github.com/asamgx/storix/cmd/storix"
 go "github.com/go-delve/delve/cmd/dlv"
 go "github.com/maaslalani/nap"
 go "github.com/pressly/goose/v3/cmd/goose"
