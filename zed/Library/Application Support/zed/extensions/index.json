@@ -24,7 +24,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -55,7 +54,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -85,7 +83,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -115,7 +112,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -149,7 +145,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -180,7 +175,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -215,7 +209,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -226,9 +219,9 @@
       "manifest": {
         "id": "dockerfile",
         "name": "Dockerfile",
-        "version": "0.3.0",
+        "version": "0.2.0",
         "schema_version": 1,
-        "description": "Dockerfile and Docker Compose support.",
+        "description": "Dockerfile support.",
         "repository": "https://github.com/zed-extensions/dockerfile",
         "authors": [
           "d1y <chenhonzho@gmail.com>",
@@ -241,18 +234,12 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/docker-compose",
           "languages/dockerfile"
         ],
         "grammars": {
           "dockerfile": {
             "repository": "https://github.com/camdencheek/tree-sitter-dockerfile",
             "rev": "868e44ce378deb68aac902a9db68ff82d2299dd0",
-            "path": null
-          },
-          "yaml": {
-            "repository": "https://github.com/zed-industries/tree-sitter-yaml",
-            "rev": "baff0b51c64ef6a1fb1f8390f3ad6015b83ec13a",
             "path": null
           }
         },
@@ -265,7 +252,7 @@
             ],
             "language_ids": {
               "Dockerfile": "dockerfile",
-              "Docker Compose": "dockercompose"
+              "Docker Compose": "docker-compose"
             },
             "code_action_kinds": null
           },
@@ -277,7 +264,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": [],
@@ -293,7 +279,7 @@
       "manifest": {
         "id": "dracula",
         "name": "Dracula",
-        "version": "1.1.2",
+        "version": "1.1.1",
         "schema_version": 1,
         "description": "Official Dracula theme for Zed",
         "repository": "https://github.com/dracula/zed",
@@ -312,7 +298,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -323,7 +308,7 @@
       "manifest": {
         "id": "env",
         "name": "env",
-        "version": "0.0.2",
+        "version": "0.0.1",
         "schema_version": 1,
         "description": "🔐 Environment support. ✰ and report issues ➩",
         "repository": "https://github.com/zarifpour/zed-env",
@@ -348,7 +333,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -359,7 +343,7 @@
       "manifest": {
         "id": "git-firefly",
         "name": "Git Firefly",
-        "version": "0.1.9",
+        "version": "0.1.4",
         "schema_version": 1,
         "description": "Provides Git Syntax Highlighting",
         "repository": "https://github.com/d1y/git_firefly",
@@ -374,25 +358,25 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/gitrebase",
           "languages/gitignore",
           "languages/gitattributes",
+          "languages/gitrebase",
           "languages/gitconfig"
         ],
         "grammars": {
           "git_config": {
             "repository": "https://github.com/the-mikedavis/tree-sitter-git-config",
-            "rev": "3a61756a81a86291a0f48e3eeeaa0692b9981aa9",
+            "rev": "9c2a1b7894e6d9eedfe99805b829b4ecd871375e",
             "path": null
           },
           "git_rebase": {
             "repository": "https://github.com/the-mikedavis/tree-sitter-git-rebase",
-            "rev": "39bf3b7566c86ccffd70aaa5105c7c8b76788975",
+            "rev": "d8a4207ebbc47bd78bacdf48f883db58283f9fd8",
             "path": null
           },
           "gitattributes": {
             "repository": "https://github.com/tree-sitter-grammars/tree-sitter-gitattributes",
-            "rev": "1b7af09d45b579f9f288453b95ad555f1f431645",
+            "rev": "41940e199ba5763abea1d21b4f717014b45f01ea",
             "path": null
           },
           "gitignore": {
@@ -403,7 +387,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -439,7 +422,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -450,7 +432,7 @@
       "manifest": {
         "id": "helm",
         "name": "Helm",
-        "version": "0.0.6",
+        "version": "0.0.2",
         "schema_version": 1,
         "description": "Syntax highlighting for Helm templates",
         "repository": "https://github.com/cabrinha/helm.zed",
@@ -471,7 +453,7 @@
         "grammars": {
           "helm": {
             "repository": "https://github.com/ngalaiko/tree-sitter-go-template",
-            "rev": "aa71f63de226c5592dfbfc1f29949522d7c95fac",
+            "rev": "9d3f6e526dd074b9edae9070b7bb778f00e87a5b",
             "path": "dialects/helm"
           }
         },
@@ -484,7 +466,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -530,7 +511,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -560,7 +540,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -598,7 +577,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -609,7 +587,7 @@
       "manifest": {
         "id": "lua",
         "name": "Lua",
-        "version": "0.1.10",
+        "version": "0.1.9",
         "schema_version": 1,
         "description": "Lua support.",
         "repository": "https://github.com/zed-extensions/lua",
@@ -623,8 +601,8 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/lua",
-          "languages/emmyluadoc"
+          "languages/emmyluadoc",
+          "languages/lua"
         ],
         "grammars": {
           "emmyluadoc": {
@@ -634,7 +612,7 @@
           },
           "lua": {
             "repository": "https://github.com/tree-sitter-grammars/tree-sitter-lua",
-            "rev": "10fe0054734eec83049514ea2e718b2a56acd0c9",
+            "rev": "d76023017f7485eae629cb60d406c7a1ca0f40c9",
             "path": null
           }
         },
@@ -650,7 +628,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -692,7 +669,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -722,7 +698,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -732,13 +707,13 @@
     "nvim-nightfox": {
       "manifest": {
         "id": "nvim-nightfox",
-        "name": "Nightfox",
-        "version": "0.10.5",
+        "name": "Nightfox Themes - opaque / blurred",
+        "version": "0.8.0",
         "schema_version": 1,
-        "description": "🦊 A port of the Neovim Nightfox themes. Includes all variants as opaque and blurred version.",
+        "description": "A port of the Neovim Nightfox themes. Includes all variants as opaque and blurred version.",
         "repository": "https://github.com/cange/nightfox.zed",
         "authors": [
-          "cange"
+          "Christian Angermann"
         ],
         "lib": {
           "kind": null,
@@ -752,7 +727,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -763,7 +737,7 @@
       "manifest": {
         "id": "prisma",
         "name": "Prisma",
-        "version": "0.1.9",
+        "version": "0.1.8",
         "schema_version": 1,
         "description": "Prisma support.",
         "repository": "https://github.com/zed-extensions/prisma",
@@ -796,7 +770,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -833,7 +806,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -844,7 +816,7 @@
       "manifest": {
         "id": "sql",
         "name": "SQL",
-        "version": "1.1.8",
+        "version": "1.1.7",
         "schema_version": 1,
         "description": "SQL language support.",
         "repository": "https://github.com/zed-extensions/sql",
@@ -866,13 +838,12 @@
         "grammars": {
           "sql": {
             "repository": "https://github.com/DerekStride/tree-sitter-sql",
-            "rev": "851e9cb257ba7c66cc8c14214a31c44d2f1e954e",
+            "rev": "4a99c73f5384f2be10adc55208c84d95a7eb1137",
             "path": null
           }
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -883,7 +854,7 @@
       "manifest": {
         "id": "terraform",
         "name": "Terraform",
-        "version": "0.1.9",
+        "version": "0.1.6",
         "schema_version": 1,
         "description": "Terraform support.",
         "repository": "https://github.com/zed-extensions/terraform",
@@ -898,14 +869,14 @@
         "themes": [],
         "icon_themes": [],
         "languages": [
-          "languages/hcl",
           "languages/terraform",
-          "languages/terraform-vars"
+          "languages/terraform-vars",
+          "languages/hcl"
         ],
         "grammars": {
           "hcl": {
-            "repository": "https://github.com/tree-sitter-grammars/tree-sitter-hcl",
-            "rev": "fad991865fee927dd1de5e172fb3f08ac674d914",
+            "repository": "https://github.com/MichaHoffmann/tree-sitter-hcl",
+            "rev": "e936d3fef8bac884661472dce71ad82284761eb1",
             "path": null
           }
         },
@@ -924,7 +895,6 @@
           }
         },
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -954,7 +924,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -991,7 +960,6 @@
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -1021,7 +989,6 @@
         "grammars": {},
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -1032,7 +999,7 @@
       "manifest": {
         "id": "xml",
         "name": "XML",
-        "version": "0.1.1",
+        "version": "0.1.0",
         "schema_version": 1,
         "description": "XML syntax support.",
         "repository": "https://github.com/sweetppro/zed-xml",
@@ -1051,13 +1018,12 @@
         "grammars": {
           "xml": {
             "repository": "https://github.com/tree-sitter-grammars/tree-sitter-xml",
-            "rev": "5000ae8f22d11fbe93939b05c1e37cf21117162d",
+            "rev": "863dbc381f44f6c136a399e684383b977bb2beaa",
             "path": "xml"
           }
         },
         "language_servers": {},
         "context_servers": {},
-        "agent_servers": {},
         "slash_commands": {},
         "snippets": null,
         "capabilities": []
@@ -1202,7 +1168,7 @@
       "extension": "dracula",
       "path": "themes/dracula.json"
     },
-    "Dracula Light (Alucard": {
+    "Dracula Light (Alucard)": {
       "extension": "dracula",
       "path": "themes/dracula.json"
     },
@@ -1318,22 +1284,6 @@
     }
   },
   "languages": {
-    "Docker Compose": {
-      "extension": "dockerfile",
-      "path": "languages/docker-compose",
-      "matcher": {
-        "path_suffixes": [
-          "docker-compose.yml",
-          "docker-compose.yaml",
-          "compose.yaml",
-          "compose.yml"
-        ],
-        "first_line_pattern": null,
-        "modeline_aliases": []
-      },
-      "hidden": false,
-      "grammar": "yaml"
-    },
     "Dockerfile": {
       "extension": "dockerfile",
       "path": "languages/dockerfile",
@@ -1347,7 +1297,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "dockerfile"
+      "grammar": "dockerfile",
+      "query_files": 17
     },
     "EmmyLuadoc": {
       "extension": "lua",
@@ -1358,7 +1309,8 @@
         "modeline_aliases": []
       },
       "hidden": true,
-      "grammar": "emmyluadoc"
+      "grammar": "emmyluadoc",
+      "query_files": 1
     },
     "Git Attributes": {
       "extension": "git-firefly",
@@ -1369,12 +1321,11 @@
           ".gitattributes"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": [
-          "gitattributes"
-        ]
+        "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "gitattributes"
+      "grammar": "gitattributes",
+      "query_files": 1
     },
     "Git Config": {
       "extension": "git-firefly",
@@ -1387,12 +1338,11 @@
           ".lfsconfig"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": [
-          "gitconfig"
-        ]
+        "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "git_config"
+      "grammar": "git_config",
+      "query_files": 1
     },
     "Git Ignore": {
       "extension": "git-firefly",
@@ -1405,7 +1355,6 @@
           ".eslintignore",
           ".fdignore",
           ".gitignore",
-          ".gitignore_global",
           ".git-blame-ignore-revs",
           ".ignore",
           ".npmignore",
@@ -1414,12 +1363,11 @@
           ".vscodeignore"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": [
-          "gitignore"
-        ]
+        "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "gitignore"
+      "grammar": "gitignore",
+      "query_files": 1
     },
     "Git Rebase": {
       "extension": "git-firefly",
@@ -1429,12 +1377,11 @@
           "git-rebase-todo"
         ],
         "first_line_pattern": null,
-        "modeline_aliases": [
-          "gitrebase"
-        ]
+        "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "git_rebase"
+      "grammar": "git_rebase",
+      "query_files": 1
     },
     "Go Sum": {
       "extension": "gosum",
@@ -1447,7 +1394,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "gosum"
+      "grammar": "gosum",
+      "query_files": 1
     },
     "HCL": {
       "extension": "terraform",
@@ -1460,7 +1408,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "hcl"
+      "grammar": "hcl",
+      "query_files": 31
     },
     "HTML": {
       "extension": "html",
@@ -1475,20 +1424,20 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "html"
+      "grammar": "html",
+      "query_files": 63
     },
     "Helm": {
       "extension": "helm",
       "path": "languages/helm",
       "matcher": {
-        "path_suffixes": [
-          ".helmignore"
-        ],
+        "path_suffixes": [],
         "first_line_pattern": null,
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "helm"
+      "grammar": "helm",
+      "query_files": 17
     },
     "LOG": {
       "extension": "log",
@@ -1501,7 +1450,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "log"
+      "grammar": "log",
+      "query_files": 1
     },
     "Lua": {
       "extension": "lua",
@@ -1514,7 +1464,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "lua"
+      "grammar": "lua",
+      "query_files": 543
     },
     "Make": {
       "extension": "make",
@@ -1532,7 +1483,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "make"
+      "grammar": "make",
+      "query_files": 159
     },
     "Prisma": {
       "extension": "prisma",
@@ -1545,7 +1497,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "prisma"
+      "grammar": "prisma",
+      "query_files": 517
     },
     "SQL": {
       "extension": "sql",
@@ -1558,7 +1511,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "sql"
+      "grammar": "sql",
+      "query_files": 539
     },
     "TOML": {
       "extension": "toml",
@@ -1574,7 +1528,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "toml"
+      "grammar": "toml",
+      "query_files": 639
     },
     "Terraform": {
       "extension": "terraform",
@@ -1588,7 +1543,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "hcl"
+      "grammar": "hcl",
+      "query_files": 31
     },
     "Terraform Vars": {
       "extension": "terraform",
@@ -1601,7 +1557,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "hcl"
+      "grammar": "hcl",
+      "query_files": 27
     },
     "XML": {
       "extension": "xml",
@@ -1614,7 +1571,8 @@
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "xml"
+      "grammar": "xml",
+      "query_files": 13
     },
     "env": {
       "extension": "env",
@@ -1625,14 +1583,14 @@
           "env",
           "envrc",
           "example",
-          "local",
-          "test"
+          "local"
         ],
         "first_line_pattern": null,
         "modeline_aliases": []
       },
       "hidden": false,
-      "grammar": "env"
+      "grammar": "env",
+      "query_files": 1
     }
   }
 }
