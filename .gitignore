@@ -12,3 +12,6 @@ local_extensions/
 # Machine-only shell/git settings live in $HOME, never in the repo
 .zshrc.local
 .gitconfig-local
+
+# Claude Code / installers write here; ~/.claude/skills is a real folder, never stowed
+claude/.claude/skills/

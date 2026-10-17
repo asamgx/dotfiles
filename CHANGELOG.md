@@ -5,6 +5,70 @@ Each entry lists what changed and what to run on every machine that hasn't done 
 "Done on" tracks progress per machine; a machine with steps still open is listed as
 `**machine**: all except step N (reason)`.
 
+## 2026-10-17 — History rewrite, claude package holds only settings, leak guard
+
+Done on: **pro**.
+
+### What changed in the repo
+
+- **History was rewritten** (`git filter-repo`) to remove work details from `claude/.claude/settings.json`
+  and Anthropic's licensed skills from `claude/.claude/skills/synced/`. Every commit since 2026-09-21 has
+  a new SHA, so **`git pull` will fail or merge old history back in**. Use the reset in step 2.
+- The `claude` package now holds only hand-written files: `settings.json`, `CLAUDE.md`,
+  `.omc-config.json`, `package-manager.json`, `hud/`. `skills/` and the unused `statusline.sh` are gone,
+  and `claude/.claude/skills/` is gitignored.
+- `~/.claude/skills` must be a real folder, not a symlink into the repo: Claude Code syncs account
+  skills into it, and that churn was being committed.
+- The Cloudflare skills now come from `cloudflare@claude-plugins-official`, enabled in `settings.json`,
+  instead of copies in the repo.
+- Work-specific `autoMode` entries moved to the untracked `~/.claude/automode.local.json`, loaded by
+  `alias claude='claude --settings ~/.claude/automode.local.json'` in `~/.zshrc.local`. Claude Code
+  reads `autoMode` only from user settings, managed settings or `--settings`, not from project settings.
+- `.githooks/pre-commit` refuses generated paths, credential-like strings and the regexes in the
+  untracked `~/.config/dotfiles/leak-patterns`.
+
+### Steps for each machine
+
+1. **Save local work.** `git -C ~/dotfiles status --short`; commit nothing yet. Stash it if anything shows:
+
+   ```sh
+   git -C ~/dotfiles stash push -u -m before-rewrite
+   ```
+
+2. **Reset to the rewritten history** (not `git pull`):
+
+   ```sh
+   git -C ~/dotfiles fetch origin
+   git -C ~/dotfiles reset --hard origin/main
+   git -C ~/dotfiles stash list | grep -q before-rewrite && git -C ~/dotfiles stash pop
+   git -C ~/dotfiles status -sb                      # should show "## main...origin/main" with no ahead/behind
+   ```
+
+   If the stash pop conflicts on files under `claude/.claude/skills/`, drop those changes:
+   `git -C ~/dotfiles checkout -- . && git -C ~/dotfiles stash drop`.
+
+3. **Make `~/.claude/skills` a real folder** (close other Claude sessions first):
+
+   ```sh
+   [ -L ~/.claude/skills ] && rm ~/.claude/skills; mkdir -p ~/.claude/skills
+   [ -L ~/.claude/statusline.sh ] && rm ~/.claude/statusline.sh
+   ls -la ~/.claude/skills                          # real folder; start Claude and synced/ reappears
+   ```
+
+4. **Cloudflare plugin**: `claude plugin install cloudflare@claude-plugins-official` (skip if
+   `claude plugin list | grep cloudflare` already shows it).
+
+5. **Leak guard**:
+
+   ```sh
+   git -C ~/dotfiles config core.hooksPath .githooks
+   mkdir -p ~/.config/dotfiles   # then copy ~/.config/dotfiles/leak-patterns from pro
+   ```
+
+6. **Work machines only**: copy `~/.claude/automode.local.json` from pro and add the alias above to
+   `~/.zshrc.local`. Check with `zsh -ic 'alias claude'`.
+7. Run `dotstow -nv`: it should report no conflicts. Then mark the machine as done under "Done on" above.
+
 ## 2026-10-01 — Global gitignore, dotstow, ~/.zshrc.local, new-machine checklist
 
 Done on: **pro**.

@@ -12,6 +12,7 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/) fo
 
 ```
 dotfiles/
+├── .githooks/              # pre-commit leak guard (repo is public; enable: git config core.hooksPath .githooks)
 ├── _brew_air/              # Brewfile for MacBook Air
 ├── _brew_mini/             # Brewfile for Mac mini
 ├── _brew_pro/              # Brewfile for MacBook Pro
@@ -20,7 +21,7 @@ dotfiles/
 │ # Stow packages (each directory mirrors $HOME structure):
 ├── aerospace/              # Tiling window manager
 ├── brewsync/               # brewsync config + ignore list (shared, current_machine: auto)
-├── claude/                 # Claude AI settings
+├── claude/                 # Claude Code settings (hand-written files only; ~/.claude/skills is a real folder)
 ├── colorscripts/           # Shell color scripts shown at shell start (copied from shell-color-scripts, see CREDITS.md)
 ├── ghostty/                # Terminal emulator
 ├── git/                    # Git configuration

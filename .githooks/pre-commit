@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Refuse commits that would publish private data. This repo is public.
+# Enable per clone: git config core.hooksPath .githooks
+# Private terms (work org, repos, buckets) go one regex per line in an untracked file:
+#   ~/.config/dotfiles/leak-patterns
+# Bypass a false positive with: git commit --no-verify
+set -euo pipefail
+
+patterns_file="$HOME/.config/dotfiles/leak-patterns"
+fail=0
+
+# Paths that are generated or machine-local and must never be committed
+bad_paths=$(git diff --cached --name-only --diff-filter=ACMR |
+  grep -E '(^|/)\.DS_Store$|^claude/\.claude/skills/|\.local\.json$|(^|/)\.zshrc\.local$|(^|/)\.gitconfig-local$' || true)
+if [[ -n $bad_paths ]]; then
+  echo "pre-commit: these paths must not be committed:" >&2
+  sed 's/^/  /' <<<"$bad_paths" >&2
+  fail=1
+fi
+
+added=$(git diff --cached -U0 --no-color --diff-filter=ACMR | grep -E '^\+[^+]' || true)
+
+# Common credential formats
+token_re='ghp_[A-Za-z0-9]{36}|github_pat_[A-Za-z0-9_]{22,}|gho_[A-Za-z0-9]{36}|sk-(ant-|proj-)?[A-Za-z0-9_-]{32,}|AKIA[0-9A-Z]{16}|xox[abpr]-[A-Za-z0-9-]{10,}|AIza[0-9A-Za-z_-]{35}|glpat-[A-Za-z0-9_-]{20}|-----BEGIN [A-Z ]*PRIVATE KEY-----'
+if hits=$(grep -E "$token_re" <<<"$added"); then
+  echo "pre-commit: added lines look like credentials:" >&2
+  sed 's/^/  /' <<<"$hits" >&2
+  fail=1
+fi
+
+if [[ -r $patterns_file ]]; then
+  if hits=$(grep -iEf <(grep -vE '^\s*(#|$)' "$patterns_file") <<<"$added"); then
+    echo "pre-commit: added lines match $patterns_file:" >&2
+    sed 's/^/  /' <<<"$hits" >&2
+    fail=1
+  fi
+else
+  echo "pre-commit: warning: $patterns_file missing, private terms not checked" >&2
+fi
+
+if ((fail)); then
+  echo "pre-commit: commit refused (git commit --no-verify to override)" >&2
+  exit 1
+fi

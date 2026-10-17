@@ -74,7 +74,17 @@ trim it) before step 6.
 9. **Machine-only settings** go in untracked files that the tracked configs load if present:
    `~/.zshrc.local` (sourced last by `.zshrc`; secrets, machine-specific env) and
    `~/.gitconfig-local` (included by `.gitconfig`). `ssh/.ssh/config` is a reference copy; copy what
-   you need into `~/.ssh/config` by hand.
+   you need into `~/.ssh/config` by hand. Work-specific Claude Code auto-mode context goes in
+   `~/.claude/automode.local.json`, loaded by `alias claude='claude --settings ~/.claude/automode.local.json'`
+   in `~/.zshrc.local`.
+
+10. **Leak guard** (this repo is public): enable the pre-commit hook and list private terms to block,
+    one regex per line, in an untracked file:
+
+    ```bash
+    git -C ~/dotfiles config core.hooksPath .githooks
+    mkdir -p ~/.config/dotfiles && $EDITOR ~/.config/dotfiles/leak-patterns   # copy from another machine
+    ```
 
 `CHANGELOG.md` lists migration steps for machines that were already set up. A machine set up from
 this checklist already matches the latest state, so add it to each entry's "Done on" line instead of

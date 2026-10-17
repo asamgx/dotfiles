@@ -3,6 +3,10 @@
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
     "DISABLE_ZOXIDE": "1"
   },
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
   "permissions": {
     "allow": [
       "Bash(git checkout:*)",
@@ -145,7 +149,8 @@
     "ralph-loop@claude-plugins-official": true,
     "playwright@claude-plugins-official": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "typescript-lsp@claude-plugins-official": true
+    "typescript-lsp@claude-plugins-official": true,
+    "cloudflare@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "omc": {
@@ -161,13 +166,18 @@
       }
     }
   },
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "high"
+    }
+  },
   "autoUpdatesChannel": "stable",
   "minimumVersion": "2.1.89",
   "tui": "fullscreen",
   "theme": "dark-ansi",
   "editorMode": "vim",
   "preferredNotifChannel": "ghostty",
-  "autoCompactEnabled": true,
+  "autoCompactEnabled": false,
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
@@ -177,10 +187,5 @@
       "Bash(gcloud * --project=*prod*) writes"
     ]
   },
-  "voiceEnabled": true,
-  "modelSettings": {
-    "claude-opus-5-5": {
-      "effortLevel": "high"
-    }
-  }
+  "voiceEnabled": true
 }

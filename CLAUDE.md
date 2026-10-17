@@ -73,6 +73,11 @@ The `.zshrc` detects machine via hostname and sets `$MACHINE` to `air`, `mini`, 
 - **Neovim**: LazyVim framework, plugins in `lua/plugins/`, language configs in `lua/plugins/lang/`
 - **Tmux**: TPM plugin manager, Catppuccin theme, prefix `Ctrl+b` (local) / `Ctrl+a` (SSH)
 - **Zsh**: Starship prompt, plugins via Homebrew, integrations with zoxide, fzf, pyenv, nvm
+- **Claude Code**: the `claude` package holds only hand-written files (`settings.json`, `CLAUDE.md`, `.omc-config.json`, `package-manager.json`, `hud/`). `~/.claude/skills` is a real folder, never stowed: Claude Code syncs account skills into it, and third-party skills come from plugins enabled in `settings.json`. Work-specific `autoMode` entries live in the untracked `~/.claude/automode.local.json`, loaded by a `claude --settings` alias in `~/.zshrc.local`.
+
+### Public Repo: Never Commit Private Data
+
+This repo is public. Commit only settings, never work details, generated files or credentials; machine-only or private values go in untracked files (`~/.zshrc.local`, `~/.gitconfig-local`, `~/.claude/automode.local.json`). `.githooks/pre-commit` (enable per clone with `git config core.hooksPath .githooks`) refuses generated paths, credential-like strings and any regex listed in the untracked `~/.config/dotfiles/leak-patterns`.
 
 ### Files Ignored by Stow
 
