@@ -132,7 +132,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "node $HOME/.claude/hud/omc-hud.mjs"
+    "command": "node $HOME/.claude/hud/statusline.mjs"
   },
   "enabledPlugins": {
     "code-review@claude-plugins-official": false,
@@ -143,22 +143,15 @@
     "gopls-lsp@claude-plugins-official": true,
     "linear@claude-plugins-official": true,
     "lua-lsp@claude-plugins-official": true,
-    "oh-my-claudecode@omc": true,
     "pr-review-toolkit@claude-plugins-official": true,
     "pyright-lsp@claude-plugins-official": true,
     "ralph-loop@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true,
+    "playwright@claude-plugins-official": false,
     "rust-analyzer-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "cloudflare@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
-    "omc": {
-      "source": {
-        "source": "git",
-        "url": "https://github.com/Yeachan-Heo/oh-my-claudecode.git"
-      }
-    },
     "openai-codex": {
       "source": {
         "source": "github",
@@ -184,7 +177,37 @@
   "autoMode": {
     "soft_deny": [
       "$defaults",
-      "Bash(gcloud * --project=*prod*) writes"
+      "Bash(gcloud * --project=*prod*) writes",
+      "Bash(make *prod*) deploy targets",
+      "Bash(terraform apply *) against prod-named directories, workspaces or modules",
+      "Bash(psql *) writes against production connection strings"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: None configured",
+      "**Cloud provider(s)**: Google Cloud Platform (GCP), managed with gcloud and Terraform",
+      "**Repository visibility**: work repos are private; `~/dotfiles` is public, so never commit work details, generated files or credentials there",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: None configured — repos use local, gitignored `.env` files",
+      "**Default / protected branches**: main is the default branch; treat it as protected",
+      "**CI/CD deploy targets**: None configured",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine with open internet",
+      "**Source control**: the current repo and its origin remote only",
+      "**Trusted internal domains**: None configured",
+      "**Trusted cloud buckets**: None configured",
+      "**Key internal services**: None configured",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: `.env` and `.env.*` files (except `.env.example`), Terraform state (`*.tfstate`, `.terraform/`), credentials and keys; share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any project, namespace, host, bucket or container whose name carries `prod` or `production` as a whole word or name segment",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development (TypeScript, Python, Go, Terraform on GCP) and maintaining these dotfiles",
+      "**Trusted repos**: git repos under `~/code`, `~/personal` and `~/dotfiles`, each with its own origin remote",
+      "**Org-specific CLIs**: None configured",
+      "**Branch naming**: branches start with `asamgx/`, never `gandrewsameh/` or other prefixes"
     ]
   },
   "voiceEnabled": true

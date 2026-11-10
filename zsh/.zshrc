@@ -170,7 +170,6 @@ alias aple='source .venv/bin/activate'
 # claude-code
 alias lcc="CLAUDE_CODE_NO_FLICKER=1 claude"
 alias lccwf="claude"
-alias lccbase='claude --settings '\''{"enabledPlugins":{"oh-my-claudecode@omc":false}}'\'''
 
 ############################################
 #   TERMINAL DOPAMINE PACK — FINAL EDITION

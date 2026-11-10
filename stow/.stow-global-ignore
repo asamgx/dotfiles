@@ -25,6 +25,3 @@ _darcs
 .DS_Store
 TODO.*
 .*.secrets.*
-
-# oh-my-claudecode per-project session state (also gitignored)
-\.omc

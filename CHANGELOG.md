@@ -5,6 +5,60 @@ Each entry lists what changed and what to run on every machine that hasn't done 
 "Done on" tracks progress per machine; a machine with steps still open is listed as
 `**machine**: all except step N (reason)`.
 
+## 2026-11-09 — Remove oh-my-claudecode, own status line
+
+Done on: **pro**.
+
+### What changed in the repo
+
+- **oh-my-claudecode (OMC) is gone.** It ran about 25 Node hooks around every tool call, injected its own
+  orchestration prompt, and mostly duplicated built-in features and other enabled plugins. Its
+  marketplace pulled unpinned code from a single maintainer's repo, which then ran on every tool call.
+- `claude/.claude/CLAUDE.md` now holds only the git conventions; the OMC prompt is gone.
+- `claude/.claude/.omc-config.json` and `hud/omc-hud.mjs` are deleted. The status line is now
+  `hud/statusline.mjs`, a single dependency-free script with the same layout: git branch and status, then
+  model, effort, 5h/weekly usage, session time, context bar and tool/agent counts. It takes usage from
+  Claude Code's status line input, so it reads no Keychain token and makes no network calls.
+- `.omc/` is no longer in `.gitignore` or `.stow-global-ignore`, and the `lccbase` alias (Claude
+  without OMC) is gone from `.zshrc`.
+
+### Steps for each machine
+
+1. **Uninstall the plugin and its marketplace** (each command is a no-op if already gone):
+
+   ```sh
+   claude plugin uninstall oh-my-claudecode@omc 2>/dev/null
+   claude plugin marketplace remove omc 2>/dev/null
+   claude plugin list 2>&1 | grep -i oh-my || echo "OMC plugin gone"
+   ```
+
+2. **Remove the dangling config symlink** left after `git pull`:
+
+   ```sh
+   [ -L ~/.claude/.omc-config.json ] && [ ! -e ~/.claude/.omc-config.json ] && rm ~/.claude/.omc-config.json
+   ls ~/.claude/hud/statusline.mjs            # should exist (hud/ is a folded symlink)
+   ```
+
+3. **Archive OMC plans/specs/research, then delete all OMC state.** OMC wrote untracked `.omc/` folders
+   into every project it ran in; this keeps any `*.md` and `research/` under `~/omc-archive/` first:
+
+   ```sh
+   A=~/omc-archive; mkdir -p "$A"
+   find ~ -maxdepth 5 -type d -name .omc -not -path '*/Library/*' -not -path '*/node_modules/*' 2>/dev/null |
+   while read -r d; do
+     rel=${d#$HOME/}; rel=${rel%/.omc}
+     (cd "$d" && find . -type f -name '*.md' -not -path '*/state/*' -not -path './sessions/*' -exec sh -c \
+       'mkdir -p "$0/$(dirname "$1")" && cp -p "$1" "$0/$1"' "$A/$rel" {} \;)
+     [ -d "$d/research" ] && mkdir -p "$A/$rel" && rsync -a --exclude .omc "$d/research" "$A/$rel/"
+     rm -rf "$d"
+   done
+   rm -rf ~/.claude/plugins/cache/omc ~/.claude/plugins/oh-my-claudecode ~/.claude/plugins/data/oh-my-claudecode-omc
+   find "$A" -type d -empty -delete 2>/dev/null
+   find ~ -maxdepth 5 -type d -name .omc -not -path '*/Library/*' 2>/dev/null | wc -l   # should be 0
+   ```
+
+4. **Check the status line** in a new Claude Code session: two lines, no `[OMC#…]` label.
+
 ## 2026-10-17 — History rewrite, claude package holds only settings, leak guard
 
 Done on: **pro**.
