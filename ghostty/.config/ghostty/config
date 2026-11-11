@@ -3,6 +3,9 @@ background-blur-radius = 20
 font-size = 14
 #font-family = "CaskaydiaCove Nerd Font"
 font-family = "JetBrainsMono Nerd Font",
+# Fallback for symbols the Nerd Font lacks (✦ ✢ ✳ ✽ …). Ghostty 1.4.0's
+# automatic fallback draws them as letters (✦→F); naming Menlo here avoids it.
+font-family = "Menlo"
 theme = Catppuccin Mocha
 macos-option-as-alt = true
 window-decoration = true
