@@ -73,6 +73,8 @@ brew "hashicorp/tap/terraform"
 brew "helm"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
+# Tool to unpack installers created by Inno Setup
+brew "innoextract"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # Command-line note taker
@@ -95,6 +97,8 @@ brew "lolcat"
 brew "lsd"
 # Mac App Store command-line interface
 brew "mas"
+# Deep clean and optimize your Mac
+brew "mole"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Net top tool grouping bandwidth per process
@@ -198,8 +202,6 @@ cask "beyond-compare"
 cask "bitwarden"
 # 3D creation suite
 cask "blender"
-# Web browser focusing on privacy
-cask "brave-browser"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
 # Anthropic's official Claude AI desktop app
@@ -228,12 +230,18 @@ cask "github"
 cask "google-chrome"
 # Graphically shows disk usage within a file system
 cask "grandperspective"
+# Speech to text application
+cask "handy"
+# Chromium-based web browser
+cask "helium-browser"
 # Utility to hide menu bar items
 cask "hiddenbar"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Open-source keystroke visualiser
 cask "keycastr"
+# Electronics design automation suite
+cask "kicad"
 # Kubernetes IDE
 cask "lens"
 # Open-source cross-platform alternative to AirDrop
@@ -284,10 +292,14 @@ cask "transmission"
 cask "visual-studio-code"
 # Multimedia player
 cask "vlc"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 # Multiplayer code editor
 cask "zed"
+# Gecko based web browser
+cask "zen"
 
 mas "Amphetamine", id: 937984704
 mas "Bitwarden", id: 1352778147
